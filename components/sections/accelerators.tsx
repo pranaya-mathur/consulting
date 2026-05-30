@@ -6,17 +6,6 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { products } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
-const GithubIcon = ({ className }: { className?: string }) => (
-  <svg
-    role="img"
-    viewBox="0 0 24 24"
-    className={className}
-    fill="currentColor"
-  >
-    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-  </svg>
-);
-
 // Map IDs to specific Lucide icons for rich visual feedback
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   verishield: ShieldCheck,
@@ -69,16 +58,16 @@ export function SolutionAccelerators() {
       <div className="container-narrow">
         <FadeIn>
           <p className="text-sm font-medium tracking-wide text-accent uppercase">
-            Reusable Blueprints
+            Private Implementation Portfolio
           </p>
           <h2
             id="accelerators-heading"
             className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-foreground md:text-4xl"
           >
-            Repo-grounded AI accelerators
+            Client-safe AI accelerators
           </h2>
           <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed">
-            We don&apos;t build slide decks. VeriEdge AI leverages actual, functional code repositories across LLM guardrails, multi-agent frameworks, search pipelines, and predictive models to launch your custom AI pilots within weeks.
+            We bypass slide-decks. VeriEdge AI leverages mature, pre-built reference architectures and private implementation patterns to fast-track and de-risk your operational AI pilots.
           </p>
         </FadeIn>
 
@@ -105,16 +94,31 @@ export function SolutionAccelerators() {
                     <h3 className="text-lg font-semibold tracking-tight text-foreground group-hover:text-accent transition-colors duration-200">
                       {item.name}
                     </h3>
-                    <p className="mt-1 text-xs text-muted-foreground">
+                    <p className="mt-1 text-xs font-semibold text-accent uppercase tracking-wider font-mono">
+                      {item.architecture.pattern}
+                    </p>
+                    <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
                       {item.tagline}
                     </p>
+
+                    {/* Client-Safe Highlights */}
+                    <div className="flex flex-wrap gap-1 mt-3">
+                      {item.clientSafeHighlights.map((high) => (
+                        <span 
+                          key={high} 
+                          className="text-[9px] font-medium bg-muted/80 text-muted-foreground px-2 py-0.5 border border-border/30 rounded-full"
+                        >
+                          {high}
+                        </span>
+                      ))}
+                    </div>
                     
                     {/* Tech Stack Badges */}
-                    <div className="flex flex-wrap gap-1 mt-3">
+                    <div className="flex flex-wrap gap-1 mt-2.5">
                       {item.techStack.map((tech) => (
                         <span 
                           key={tech} 
-                          className="text-[9px] font-mono bg-muted/80 text-muted-foreground px-1.5 py-0.5 border border-border/30 rounded-xs"
+                          className="text-[9px] font-mono bg-accent/5 text-accent/90 px-1.5 py-0.5 border border-accent/10 rounded-xs"
                         >
                           {tech}
                         </span>
@@ -125,7 +129,7 @@ export function SolutionAccelerators() {
                   {/* Problem & Pilot Triage */}
                   <div className="mt-6 flex-1 space-y-4 border-t border-border/40 pt-4">
                     <div>
-                      <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
+                      <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider font-mono">
                         Business Problem
                       </p>
                       <p className="mt-1 text-xs leading-relaxed text-foreground/80">
@@ -133,7 +137,7 @@ export function SolutionAccelerators() {
                       </p>
                     </div>
                     <div>
-                      <p className="text-[10px] font-semibold text-accent uppercase tracking-wider">
+                      <p className="text-[10px] font-semibold text-accent uppercase tracking-wider font-mono">
                         What a Pilot Validates
                       </p>
                       <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
@@ -142,22 +146,11 @@ export function SolutionAccelerators() {
                     </div>
                   </div>
 
-                  {/* Source Repo & Status */}
-                  <div className="mt-5 border-t border-border/40 pt-3">
-                    <div className="flex items-center justify-between text-[10px] text-muted-foreground">
-                      <div className="flex items-center gap-1.5 truncate max-w-[70%]">
-                        <GithubIcon className="size-3.5 shrink-0 text-muted-foreground/60 group-hover:text-accent transition-colors duration-200" />
-                        <span className="truncate font-mono font-medium text-foreground/70 group-hover:text-foreground transition-colors duration-200" title={item.sourceRepo}>
-                          {item.sourceRepo.split(" ")[0]}
-                        </span>
-                      </div>
-                      <span className="text-[9px] font-semibold text-accent/90 bg-accent/5 px-1.5 py-0.5 rounded-xs shrink-0 max-w-[30%] truncate" title={item.status}>
-                        {item.status.split(" / ")[0]}
-                      </span>
-                    </div>
-                  </div>
-
+                  {/* Status & Explore Accelerator */}
                   <div className="mt-5 border-t border-border/40 pt-4 flex items-center justify-between">
+                    <span className="text-[10px] font-mono text-muted-foreground">
+                      {item.status.split(" / ")[0]}
+                    </span>
                     <Link
                       href={`/products/${item.id}`}
                       className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground underline-offset-4 hover:text-accent hover:underline group/btn"

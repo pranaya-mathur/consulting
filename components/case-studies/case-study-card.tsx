@@ -23,7 +23,7 @@ export function CaseStudyCard({ study, index = 0 }: CaseStudyCardProps) {
         </div>
 
         <ul className="mt-6 grid grid-cols-3 gap-4 border-y border-border/60 py-6">
-          {study.metrics.map((m) => (
+          {study.pilotSignals.map((m) => (
             <li key={m.label}>
               <p className="text-lg font-semibold text-foreground">{m.value}</p>
               <p className="mt-1 text-xs text-muted-foreground">{m.label}</p>

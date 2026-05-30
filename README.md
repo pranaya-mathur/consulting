@@ -14,20 +14,19 @@ VeriEdge AI helps companies turn AI ideas into production-ready RAG systems, AI 
 
 ---
 
-## GitHub Repository Portfolio Mapping
-Our Solution Accelerators and Reference Blueprints are 1-to-1 grounded with actual, operational codebase repositories rather than slide decks or concepts:
+## Private Accelerator Portfolio
+Our Solution Accelerators and Reference Blueprints are built on top of a mature, private implementation library containing pre-vetted system patterns rather than simple concepts. This allows us to rapidly customize:
+- **LLM Guardrail & Verification Gateway (VeriShield)**: Sit before and after LLM/RAG setups to scan input PII, enforce YAML policy rules, and index semantic audit logs.
+- **Role-Based AI Enablement Portal (AetherAI)**: Learning paths, prompt sandboxes, and quiz modules to align teams with security and productivity guidelines.
+- **Patient Intake & Clinic Workflow System (MediFlow)**: Digital patient registration and secure local document routing pipelines.
+- **Contracting Compliance RAG Assistant (GovGig AI)**: FAR/DFARS compliance RAG with hybrid search and proposal draft compilers.
+- **Public-Service Scheme Discovery RAG (Yojana-AI)**: Citizen scheme matching RAG with corrective self-healing retrieval loops.
+- **Multi-Modal Claims Risk Pipeline (ClaimLens AI)**: Tabular claim scoring, document authenticity scans, and relational connection analytics.
+- **Multilingual Support RAG Microservice (DesiDesk RAG)**: Low-latency, bilingual support FAQs with sqlite session memory and caching.
+- **Predictive Supply-Chain Intelligence Pipeline (FlowSight AI)**: Logistics exception prediction and risk duration estimation.
+- **AI Opportunity Discovery Workspace (AI Readiness Studio)**: Multi-agent discovery audits compiling prioritized roadmaps and PPTX/PDF deliverables.
 
-| Accelerator / Blueprint | Source GitHub Repository | Primary Tech Stack & Features |
-| :--- | :--- | :--- |
-| **1. VeriShield / Sovereign-AI** | `pranaya-mathur/My-Product-v1` (branch: `gcp-deploy-branch`) | FastAPI proxy, YAML-driven policy graphs, LangGraph agent, 3-tier routing, Docker/Helm. |
-| **2. AetherAI Workforce Training** | `pranaya-mathur/AI-Workforce-Training-and-Adoption-Platform` | Next.js, TS, Tailwind, Supabase database, prompt labs, manager Recharts reports. |
-| **3. MediFlow** | `pranaya-mathur/medi_flow` | Patient onboarding intake dashboard, FastAPI, Postgres, Celery background queues, local MinIO. |
-| **4. GovGig AI** | `pranaya-mathur/govgig_updated` | FAR/DFARS compliance RAG, Reciprocal Rank Fusion, pgvector hybrid search, proposal drafting. |
-| **5. Yojana-AI** | `pranaya-mathur/Yojana-AI` | Multilingual citizen scheme discovery, Qdrant database, Corrective RAG (CRAG) loops, Ollama. |
-| **6. ClaimLens AI** | `pranaya-mathur/ClaimLens_App` | Claims fraud classifier, 145 CatBoost features, OpenCV forgery scanning, Neo4j, Groq explanations. |
-| **7. DesiDesk RAG** | `pranaya-mathur/desidesk-rag-microservice` | Multilingual English/Hindi FAQ agent, ChromaDB, SQLite session memory, Redis caching. |
-| **8. FlowSight AI** | `pranaya-mathur/flowsight-ai-` | Shipment delay ML prediction, XGBoost/LightGBM/CatBoost ensemble, DuckDB feature store. |
-| **9. AI Readiness Intelligence Studio** | `pranaya-mathur/AI-Readiness-Intelligence-Studio` | Opportunity discovery audits, stateful 9-node LangGraph coordinator, PDF/DOCX/PPTX report export. |
+*All source repositories, branches, and raw configuration modules are maintained inside a secure, private engineering vault to protect client IP and proprietary frameworks.*
 
 ---
 
@@ -80,7 +79,7 @@ npm run build
 
 ---
 
-## Content Files to Edit
+## Content Data Layer
 To customize or add new elements, modify these data files:
 - **Site Config (`lib/site-config.ts`)**: Defines brand taglines, hero CTA details, primary badge availability, and main menu lists.
 - **Copy Arrays (`lib/content.ts`)**: Hosts services descriptions, sandboxed testimonials, FAQs, and main process metrics.
@@ -95,4 +94,3 @@ To customize or add new elements, modify these data files:
 - **VeriShield Live Backend**: Connect the interactive live demo console to a mock vector retrieval or model evaluation API to show custom grounding check graphs.
 - **Founder / Studio Story Page**: Create an `/about` route detailing the team's hands-on deployment history across highly regulated sectors.
 - **Real Client Case Studies**: Transition sandbox blueprints into live client deployment success stories once initial production implementation phases are complete.
-

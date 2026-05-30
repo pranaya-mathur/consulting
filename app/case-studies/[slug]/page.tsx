@@ -52,7 +52,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
           </p>
 
           <dl className="mt-12 grid grid-cols-3 gap-8 border-y border-border/60 py-10">
-            {study.metrics.map((m) => (
+            {study.pilotSignals.map((m) => (
               <div key={m.label}>
                 <dt className="text-2xl font-semibold text-foreground md:text-3xl">
                   {m.value}
