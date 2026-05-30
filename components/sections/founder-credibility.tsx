@@ -49,7 +49,7 @@ export function FounderCredibility() {
               VeriEdge AI was founded around deep practical implementation experience across RAG systems, multi-agent workflows, AI governance, healthcare AI, insurance AI, government-service intelligence, workforce training, and AI readiness tooling.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Unlike generic, giant consultancies that send junior analysts to write slides, we are a hands-on technical studio. We write the code, map the vector databases, configure the LLM routers, and build the custom guardrails that allow your teams to scale AI safely.
+              Unlike slide-first advisory engagements, VeriEdge AI is built around hands-on implementation, working code, practical architecture, and clean handoff. We write the code, map the vector databases, configure the LLM routers, and build the custom guardrails that allow your teams to scale AI safely.
             </p>
             <div className="mt-8 border-t border-border/60 pt-6">
               <blockquote className="border-l-2 border-accent pl-4 text-sm italic text-foreground/80 leading-relaxed">

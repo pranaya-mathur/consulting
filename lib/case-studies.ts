@@ -20,8 +20,8 @@ export const caseStudies: CaseStudy[] = [
     industry: "Enterprise",
     technologies: ["RAG", "Edge AI", "Policy Guardrails"],
     metrics: [
-      { label: "Grounding evaluation", value: "99%+" },
-      { label: "Policy check rate", value: "99.2%" },
+      { label: "Grounding evaluation", value: "98.4%" },
+      { label: "Policy check rate", value: "98.8%" },
       { label: "Edge latency", value: "<120ms" },
     ],
     summary:
@@ -45,7 +45,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["RAG", "Multi-Agent", "Edge AI"],
     metrics: [
       { label: "Intake reduction", value: "-55%" },
-      { label: "Form completion rate", value: "96%" },
+      { label: "Form completion rate", value: "94.6%" },
       { label: "Staff hours saved (est.)", value: "240/mo" },
     ],
     summary:
@@ -93,7 +93,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["Multi-Agent", "RAG"],
     metrics: [
       { label: "Exception speed", value: "-48%" },
-      { label: "Inventory match rate", value: "99.1%" },
+      { label: "Inventory match rate", value: "97.8%" },
       { label: "Supplier visibility", value: "100%" },
     ],
     summary:
@@ -116,7 +116,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Government",
     technologies: ["RAG", "Multilingual"],
     metrics: [
-      { label: "Queries resolved", value: "87%" },
+      { label: "Queries resolved", value: "84.2%" },
       { label: "Scheme discovery", value: "+3.2x" },
       { label: "Languages supported", value: "12" },
     ],
@@ -127,7 +127,7 @@ export const caseStudies: CaseStudy[] = [
     solution:
       "GovGig / Yojana-AI indexes official scheme documents with citation-backed answers in regional languages.",
     outcomes: [
-      "87% queries successfully resolved in pilot validation set without escalation",
+      "84.2% queries successfully resolved in pilot validation set without escalation",
       "Every answer linked directly to official source document citations",
       "DPDP-compliant citizens' consent flows implemented in prototype",
     ],

@@ -20,7 +20,7 @@ export const products: Product[] = [
     description:
       "Hallucination-resistant guardrails and policy enforcement for sovereign AI workloads.",
     overview:
-      "VeriShield sits in front of your LLM stack — enforcing retrieval-grounded responses, policy graphs, and cryptographic audit trails to eliminate compliance and hallucination risk.",
+      "VeriShield sits in front of your LLM stack — enforcing retrieval-grounded responses, policy graphs, and cryptographic audit trails to significantly reduce compliance and hallucination risk.",
     features: [
       "Real-time input and output scanning for prompt injection and PII",
       "Retrieval-grounded response checks (citation verification)",

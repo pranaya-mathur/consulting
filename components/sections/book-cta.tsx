@@ -35,7 +35,7 @@ export function BookCTA() {
                 </Link>
               </Button>
               <span className="text-xs text-muted-foreground">
-                No sales pitch. Speaks directly with a hands-on builder.
+                No sales pitch — just a focused conversation with a hands-on builder.
               </span>
             </div>
           </div>

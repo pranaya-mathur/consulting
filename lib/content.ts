@@ -27,9 +27,9 @@ export const howItWorksSteps = [
 
 export const impactMetrics = [
   { value: 4, suffix: "-6 wks", label: "Focused pilot timeline" },
-  { value: 99, suffix: "%", label: "Grounding accuracy via VeriShield" },
   { value: 7, suffix: "", label: "Pilot-ready accelerators" },
-  { value: 12, suffix: "+", label: "Regional languages supported" },
+  { value: 5, suffix: "", label: "Sandbox-validated blueprints" },
+  { value: 3, suffix: "", label: "Secure deployment models" },
 ] as const;
 
 export const services = [
@@ -85,12 +85,12 @@ export const faqs = [
   {
     question: "Do you deploy on our infrastructure?",
     answer:
-      "Yes. We prioritize security and compliance. We deploy RAG systems, agents, and guardrails directly on your private cloud, on-prem servers, or edge devices. Your data never leaves your perimeter.",
+      "Yes. We prioritize security and compliance. We support private-cloud, on-prem, and controlled deployment patterns so sensitive data can remain within approved environments.",
   },
   {
     question: "What is VeriShield?",
     answer:
-      "VeriShield is our customizable guard layer for LLM deployments. It enforces retrieval-grounded responses, runs policy check graphs, and creates audit trails to eliminate hallucination risks in regulated applications.",
+      "VeriShield is our customizable guard layer for LLM deployments. It enforces retrieval-grounded responses, runs policy check graphs, and creates audit trails to detect and control hallucination-prone responses in regulated applications.",
   },
   {
     question: "How does the engagement model work?",
@@ -105,7 +105,7 @@ export const faqs = [
   {
     question: "How can we get started?",
     answer:
-      "Book an AI Opportunity Call. We will discuss your current workflows, data reality, compliance requirements, and scope a small, high-impact pilot that can validate ROI within weeks.",
+      "Book an AI Opportunity Call. We will discuss your current workflows, data reality, risk areas, and the smallest useful pilot your team can validate.",
   },
 ] as const;
 

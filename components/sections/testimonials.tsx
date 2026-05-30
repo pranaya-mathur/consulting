@@ -11,10 +11,13 @@ export function Testimonials() {
         <FadeIn>
           <h2
             id="testimonials-heading"
-            className="text-sm font-medium tracking-wide text-muted-foreground uppercase font-mono"
+            className="text-sm font-semibold tracking-wide text-accent uppercase font-mono"
           >
-            Sandbox Evaluation Reviews
+            Design Partner Feedback
           </h2>
+          <p className="mt-2 text-xs text-muted-foreground">
+            Representative feedback from pilot-style evaluations in our sandbox environments.
+          </p>
         </FadeIn>
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
