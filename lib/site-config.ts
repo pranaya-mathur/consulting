@@ -1,32 +1,31 @@
 export const siteConfig = {
   name: "VeriEdge AI",
-  tagline:
-    "Verifiable Intelligence at the Edge. Built for Bharat, Ready for the World.",
+  tagline: "Build AI systems your business can verify, govern, and trust.",
   description:
-    "Enterprise AI consulting for production-grade RAG, multi-agent systems, and hallucination-resistant sovereign intelligence — DPDP compliant and IndiaAI Mission aligned.",
+    "VeriEdge AI is a founder-led AI consulting studio helping companies move from AI experiments to production-ready RAG systems, AI agents, workflow automation, and AI governance.",
   url: "https://veriedge.ai",
-  bookingBadge: "Only 3 slots left in May 2026",
+  bookingBadge: "Now accepting limited pilot engagements",
   nav: [
-    { label: "Products", href: "/products" },
-    { label: "Case Studies", href: "/case-studies" },
+    { label: "Accelerators", href: "/products" },
+    { label: "Blueprints", href: "/case-studies" },
     { label: "Live Demo", href: "/live-demo" },
     { label: "Services", href: "/services" },
   ],
   hero: {
-    eyebrow:
-      "Verifiable Intelligence at the Edge · Built for Bharat, Ready for the World",
-    headline: "Enterprise AI you can verify and trust",
+    eyebrow: "Founder-led AI consulting studio",
+    headline: "Build AI systems your business can verify, govern, and trust",
     subheadline:
-      "We design and deploy production-grade RAG and multi-agent systems — hallucination-resistant, DPDP compliant, and aligned with the IndiaAI Mission.",
-    primaryCta: { label: "Try VeriShield Live", href: "/live-demo" },
+      "VeriEdge AI helps companies turn AI ideas into production-ready RAG systems, AI agents, workflow automation, and governance-ready architectures using pilot-ready accelerators.",
+    primaryCta: { label: "Book an AI Opportunity Call", href: "/#book-slot" },
     secondaryCta: {
-      label: "Book Consultation Slot",
-      href: "/#book-slot",
+      label: "View Solution Accelerators",
+      href: "/products",
     },
     credentials: [
-      "DPDP Compliant",
-      "IndiaAI Mission Aligned",
-      "Sovereign Edge Deployment",
+      "RAG Systems",
+      "AI Agents",
+      "Governance-Ready AI",
+      "Pilot-First Delivery",
     ],
   },
 } as const;

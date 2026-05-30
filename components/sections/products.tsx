@@ -23,11 +23,10 @@ export function Products({ showIntro = true }: ProductsProps) {
               id="products-heading"
               className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-foreground md:text-4xl"
             >
-              Production-ready AI platforms
+              Pilot-ready AI accelerators
             </h2>
             <p className="mt-4 max-w-xl text-muted-foreground">
-              Sovereign, auditable systems designed for regulated industries and
-              enterprise scale.
+              Reusable code blueprints and pre-built prototype layers to fast-track your AI implementation safely.
             </p>
           </FadeIn>
         )}

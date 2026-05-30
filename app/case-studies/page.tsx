@@ -5,17 +5,17 @@ import { CaseStudies } from "@/components/sections/case-studies";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Case Studies",
-  description: `Production AI deployments by ${siteConfig.name} across government, healthcare, insurance, and enterprise.`,
+  title: "Blueprints",
+  description: `Sovereign AI solution blueprints and sandbox-validated pilot reference architectures by ${siteConfig.name}.`,
 };
 
 export default function CaseStudiesPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Case Studies"
-        title="Proven outcomes across industries"
-        description="Twelve production deployments with measurable impact."
+        eyebrow="Blueprints"
+        title="Reference blueprints for your workflow"
+        description="Explore our sandbox-validated, customizable solution blueprints designed for regulated industries."
       />
       <CaseStudies showAll showIntro={false} />
     </>

@@ -56,10 +56,10 @@ export function Navbar() {
           <div className="flex flex-col items-end gap-1">
             <Button asChild variant="default" size="sm">
               <Link href="#book-slot" id="book-slot">
-                Book Slot
+                Opportunity Call
               </Link>
             </Button>
-            <span className="text-[10px] font-medium text-red-600 dark:text-red-400">
+            <span className="text-[10px] font-semibold text-accent uppercase tracking-wider font-mono">
               {siteConfig.bookingBadge}
             </span>
           </div>
@@ -101,10 +101,10 @@ export function Navbar() {
             <li className="mt-4 border-t border-border pt-4">
               <Button asChild variant="default" className="w-full">
                 <Link href="#book-slot" onClick={() => setMobileOpen(false)}>
-                  Book Slot
+                  Opportunity Call
                 </Link>
               </Button>
-              <p className="mt-2 text-center text-[10px] font-medium text-red-600 dark:text-red-400">
+              <p className="mt-2 text-center text-[10px] font-semibold text-accent uppercase tracking-wider font-mono">
                 {siteConfig.bookingBadge}
               </p>
             </li>

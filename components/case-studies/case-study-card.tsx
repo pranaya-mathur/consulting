@@ -40,7 +40,7 @@ export function CaseStudyCard({ study, index = 0 }: CaseStudyCardProps) {
             href={`/case-studies/${study.slug}`}
             className="text-sm font-medium text-foreground underline-offset-4 hover:text-accent hover:underline"
           >
-            Read case study
+            View blueprint
           </Link>
           <Link
             href={study.demoHref}

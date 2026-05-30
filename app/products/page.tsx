@@ -5,17 +5,17 @@ import { Products } from "@/components/sections/products";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Products",
-  description: `Production-ready AI platforms by ${siteConfig.name} — VeriShield, ClaimLens, GovGig, FlowSight, and MediFlow Clinical.`,
+  title: "Accelerators",
+  description: `Sovereign, reusable pilot-ready accelerators by ${siteConfig.name} — including VeriShield, ClaimLens, GovGig, MediFlow, and FlowSight.`,
 };
 
 export default function ProductsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Products"
-        title="Production-ready AI platforms"
-        description="Sovereign, auditable systems designed for regulated industries and enterprise scale."
+        eyebrow="Accelerators"
+        title="Pilot-ready AI accelerators"
+        description="Reusable code blueprints and pre-built prototype layers to fast-track your AI implementation safely."
       />
       <Products showIntro={false} />
     </>

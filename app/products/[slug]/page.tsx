@@ -37,7 +37,7 @@ export default async function ProductPage({ params }: PageProps) {
             href="/products"
             className="text-sm text-muted-foreground hover:text-foreground"
           >
-            ← All products
+            ← All accelerators
           </Link>
           <p className="mt-8 text-sm font-medium tracking-wide text-accent">
             {product.tagline}
@@ -81,14 +81,14 @@ export default async function ProductPage({ params }: PageProps) {
           {product.relatedCaseStudy && (
             <Button asChild variant="outline">
               <Link href={`/case-studies/${product.relatedCaseStudy}`}>
-                View case study
+                View blueprint
               </Link>
             </Button>
           )}
           <Button asChild variant="outline">
-            <Link href="/#book-slot">Book consultation</Link>
+            <Link href="/#book-slot">Book an AI Opportunity Call</Link>
           </Button>
-          <p className="text-sm text-red-600 dark:text-red-400 sm:ml-auto">
+          <p className="text-xs font-semibold text-accent uppercase tracking-wider font-mono sm:ml-auto">
             {siteConfig.bookingBadge}
           </p>
         </div>

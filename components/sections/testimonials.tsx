@@ -11,9 +11,9 @@ export function Testimonials() {
         <FadeIn>
           <h2
             id="testimonials-heading"
-            className="text-sm font-medium tracking-wide text-muted-foreground uppercase"
+            className="text-sm font-medium tracking-wide text-muted-foreground uppercase font-mono"
           >
-            Client perspectives
+            Sandbox Evaluation Reviews
           </h2>
         </FadeIn>
 

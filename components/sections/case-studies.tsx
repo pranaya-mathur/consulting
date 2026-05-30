@@ -49,18 +49,17 @@ export function CaseStudies({
       <div className="container-narrow">
         {showIntro && (
           <FadeIn>
-            <p className="text-sm font-medium tracking-wide text-muted-foreground uppercase">
-              Case Studies
+            <p className="text-sm font-medium tracking-wide text-accent uppercase font-mono">
+              Blueprints
             </p>
             <h2
               id="case-studies-heading"
               className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-foreground md:text-4xl"
             >
-              Proven outcomes across industries
+              Industry blueprints we can adapt for your workflow
             </h2>
             <p className="mt-4 max-w-xl text-muted-foreground">
-              Production deployments with measurable impact — from sovereign
-              banking to citizen services.
+              Explore our sandbox-validated solution blueprints and pilot reference architectures designed for compliance-first applications.
             </p>
           </FadeIn>
         )}
@@ -99,7 +98,7 @@ export function CaseStudies({
             <div className="mt-12 text-center">
               <Button asChild variant="outline">
                 <Link href="/case-studies">
-                  View all {caseStudies.length} case studies
+                  View all {caseStudies.length} blueprints
                 </Link>
               </Button>
             </div>
