@@ -26,10 +26,10 @@ export const howItWorksSteps = [
 ] as const;
 
 export const impactMetrics = [
+  { value: 9, suffix: "", label: "Repo-grounded accelerators" },
   { value: 4, suffix: "-6 wks", label: "Focused pilot timeline" },
-  { value: 7, suffix: "", label: "Pilot-ready accelerators" },
-  { value: 5, suffix: "", label: "Sandbox-validated blueprints" },
-  { value: 3, suffix: "", label: "Secure deployment models" },
+  { value: 3, suffix: "", label: "Secure deployment topologies" },
+  { value: 1, suffix: "", label: "Founder-led engineering studio" },
 ] as const;
 
 export const services = [

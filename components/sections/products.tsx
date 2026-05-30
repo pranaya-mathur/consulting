@@ -35,10 +35,7 @@ export function Products({ showIntro = true }: ProductsProps) {
           {products.map((product, index) => (
             <ProductCard
               key={product.id}
-              id={product.id}
-              name={product.name}
-              tagline={product.tagline}
-              description={product.description}
+              product={product}
               index={index}
             />
           ))}
