@@ -14,220 +14,160 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "verishield",
-    title: "VeriShield / Sovereign-AI",
-    subtitle: "Policy-Driven LLM Guardrails & Verification Layer",
-    industry: "Enterprise",
-    technologies: ["FastAPI", "LangGraph", "policy YAML", "Docker", "Helm", "Ollama"],
+    slug: "yojana-ai",
+    title: "YOJANA-AI — Multilingual Citizen RAG",
+    subtitle: "Multi-agent Self-RAG + Corrective RAG on LangGraph DAG",
+    industry: "Government / Public Services",
+    technologies: ["FastAPI", "LangGraph", "Qdrant", "Ollama", "Groq", "AWS", "Terraform"],
     pilotSignals: [
-      { label: "Policy validation", value: "YAML-driven" },
-      { label: "Transit latency", value: "<120ms" },
-      { label: "Routing pipeline", value: "3 Tiers" },
+      { label: "Answer quality without human-in-loop", value: "85%" },
+      { label: "Full AWS operational cost", value: "$20-25/mo" },
+      { label: "Avg latency (no correction loops)", value: "1.8-2.5s" },
     ],
     summary:
-      "Sovereign LLM verification layer for real-time input/output compliance, PII screening, and policy enforcement in controlled environments.",
+      "Intent-aware retrieval with metadata filtering eliminates irrelevant scheme contamination. Self-RAG + Corrective RAG loops auto-correct poor retrievals. Binary LLM-as-judge is cheaper and more consistent than score-based thresholds. Local Ollama handles 60% of LLM calls for free.",
     challenge:
-      "Regulated architectures require strict local data residency controls, citation-backed claims, and custom compliance check rules to safely deploy generative models.",
+      "2,153 government schemes with mixed English/Hindi content, varying query intents (discovery vs eligibility), and no tolerance for hallucinated eligibility advice.",
     solution:
-      "VeriShield functions as a FastAPI-powered policy check proxy, executing YAML-configured policy graphs, semantic database scans, and fallback review agents at the integration boundary.",
+      "Intent-aware retrieval with metadata filtering eliminates irrelevant scheme contamination. Self-RAG + Corrective RAG loops auto-correct poor retrievals. Binary LLM-as-judge is cheaper and more consistent than score-based thresholds. Local Ollama handles 60% of LLM calls for free.",
     outcomes: [
-      "Configured YAML policy enforcement graphs and successfully verified them in a controlled private sandbox",
-      "Structured local compliance logging and audit trails to align with data minimization principles",
-      "Tested a three-tier routing workflow against simulated input injection attempts using regex, semantic embeddings, and agent logic",
+      "LangGraph 5-node DAG: Intent → Retrieve → Judge → [Self-RAG / Corrective RAG] → Generate",
+      "Qdrant vector store with metadata-filtered retrieval (intent-aware top_k 5–10)",
+      "Hybrid inference: Ollama local (classify/refine) + Groq cloud (generate/judge)",
+      "BGE-M3 multilingual embeddings (1024-dim, open-source, $0 cost)",
+      "AWS ECS Fargate auto-scale via Terraform IaC",
+    ],
+    demoHref: "/#book-slot",
+  },
+  {
+    slug: "claimlens",
+    title: "CLAIMLENS AI — Insurance Fraud Multi-Modal Pipeline",
+    subtitle: "Multi-modal fusion: ML + CV + Graph + LLM verdict aggregation",
+    industry: "Insurance / BFSI",
+    technologies: ["FastAPI", "CatBoost", "OpenCV", "Neo4j", "Groq", "Streamlit"],
+    pilotSignals: [
+      { label: "ML inference latency (standalone)", value: "~80ms" },
+      { label: "Full document analysis speed", value: "1-2s" },
+      { label: "End-to-end latency per claim", value: "<2s" },
+    ],
+    summary:
+      "Four independent engines (ML score, document authenticity, network graph, LLM explanation) provide defense-in-depth. Semantic aggregation produces a unified verdict. LLM explanations are customer-friendly, not just technical — supporting both STP automation and human escalation.",
+    challenge:
+      "Single-signal fraud rules miss sophisticated fraud networks and document forgeries. Investigators need explainable, auditable verdicts — not just probability scores.",
+    solution:
+      "Four independent engines (ML score, document authenticity, network graph, LLM explanation) provide defense-in-depth. Semantic aggregation produces a unified verdict. LLM explanations are customer-friendly, not just technical — supporting both STP automation and human escalation.",
+    outcomes: [
+      "CatBoost classifier: 145 features including text embeddings and behavioral signals",
+      "ResNet50 + Error Level Analysis for document forgery detection",
+      "Neo4j graph analytics for fraud network detection across shared documents",
+      "Groq LLaMA for auditable English/Hinglish explanation generation",
+      "FastAPI + Streamlit UI, <2s end-to-end with caching",
+    ],
+    demoHref: "/#book-slot",
+  },
+  {
+    slug: "verishield",
+    title: "VERISHIELD — LLM Safety Control Tower",
+    subtitle: "3-tier deterministic safety layer with LangGraph audit agent",
+    industry: "BFSI / Healthcare / Regulated Enterprise",
+    technologies: ["FastAPI", "LangGraph", "LangChain", "Prometheus", "Helm", "Kubernetes"],
+    pilotSignals: [
+      { label: "Production-hardened release", value: "v4.1.0-LTS" },
+      { label: "Adversarial CI bypass prevention", value: "Severity" },
+      { label: "Air-gapped local boundary support", value: "100% Secure" },
+    ],
+    summary:
+      "3-tier escalation routes 95%+ of requests through fast Tier 1 in milliseconds, escalating only ambiguous inputs to deep LangGraph reasoning. Redacted-by-default persistence and ADR documentation satisfy compliance evidence requirements.",
+    challenge:
+      "Regulated enterprises (banks, insurers) need deterministic, auditable LLM output control with India DPDP 2023 compliance and zero-trust posture — not just probabilistic moderation.",
+    solution:
+      "3-tier escalation routes 95%+ of requests through fast Tier 1 in milliseconds, escalating only ambiguous inputs to deep LangGraph reasoning. Redacted-by-default persistence and ADR documentation satisfy compliance evidence requirements.",
+    outcomes: [
+      "Tier 1: Regex/pattern checks (<5ms) — DPDP 2023 PII detection (Aadhaar, PAN, UPI)",
+      "Tier 2: Embedding-based semantic signals for adversarial prompt detection",
+      "Tier 3: LangGraph multi-step audit agent for complex policy reasoning",
+      "Zero-trust auth: x-api-key + Bearer JWT middleware on all protected routes",
+      "Helm chart + Kubernetes HPA for production deployment",
     ],
     demoHref: "/live-demo",
   },
   {
-    slug: "aetherai-training",
-    title: "AetherAI Workforce Training",
-    subtitle: "Role-Based AI Adoption & Upskilling Platform",
-    industry: "Enterprise",
-    technologies: ["Next.js", "TypeScript", "Tailwind", "Supabase", "PostgreSQL", "Recharts"],
-    pilotSignals: [
-      { label: "Safety protocols", value: "Core covered" },
-      { label: "Dilemma cases", value: "12 scenarios" },
-      { label: "Reporting boards", value: "Recharts active" },
-    ],
-    summary:
-      "Interactive role-based AI literacy, safety practice tracking, and manager enablement dashboards.",
-    challenge:
-      "Organizations adopt AI tools rapidly but lack formal safety pathways, upskilling benchmarks, role-based usage guidelines, or management visibility.",
-    solution:
-      "AetherAI maps role-specific learning paths, safety blocks, instant feedback progress quizzes, and controlled prompt testing laboratories.",
-    outcomes: [
-      "Designed and simulated safety dilemma scenarios in user testing pilots",
-      "Built dynamic usage tracking charts and manager dashboards with Recharts rendering",
-      "Validated an interactive prompt testing lab with structured user prompt exercises",
-    ],
-    demoHref: "/products/aetherai-training",
-  },
-  {
-    slug: "mediflow",
-    title: "MediFlow",
-    subtitle: "Patient Onboarding & Clinic Operations Blueprint",
-    industry: "Healthcare",
-    technologies: ["Next.js", "FastAPI", "PostgreSQL", "Celery", "Redis", "MinIO/S3"],
-    pilotSignals: [
-      { label: "Object storage", value: "Local MinIO" },
-      { label: "Asynchronous task", value: "Celery queues" },
-      { label: "AI intake layer", value: "Grounded logic" },
-    ],
-    summary:
-      "AI-assisted patient onboarding and operational clinic workflow coordination.",
-    challenge:
-      "Healthcare operations require reducing admin burden during patient intake, document routing, and scheduling, while maintaining strict local storage boundaries.",
-    solution:
-      "MediFlow handles digital intake forms, controlled local document storage using MinIO arrays, and asynchronous background worker task queues.",
-    outcomes: [
-      "Structured secure intake uploads and validated local storage configurations with MinIO object stores",
-      "Engineered background operations using Celery and Redis to process incoming registrations asynchronously",
-      "Designed multi-role dashboards for patient registration, administrative staff reviews, and clinic operations oversight",
-    ],
-    demoHref: "/products/mediflow",
-  },
-  {
-    slug: "govgig",
-    title: "GovGig AI",
-    subtitle: "Federal Contracting Compliance Intelligence",
-    industry: "Government",
-    technologies: ["FastAPI", "LangGraph", "pgvector", "RRF", "AWS", "Terraform"],
-    pilotSignals: [
-      { label: "Retrieval style", value: "RRF hybrid" },
-      { label: "Clauses index", value: "Procurement rules" },
-      { label: "Agent paths", value: "Query expansion" },
-    ],
-    summary:
-      "Federal contracting compliance RAG assistant for dense regulation search and automated contract letter drafting.",
-    challenge:
-      "Contracting and proposal teams spend hours searching dense guidelines and drafting compliance-first letters, REAs, and responses.",
-    solution:
-      "GovGig AI runs dense vector and keyword hybrid search with Reciprocal Rank Fusion, query expansion routers, and drafting helper agents.",
-    outcomes: [
-      "Evaluated automated draft letter generators against typical proposal formats in a pilot sandbox",
-      "Tested Reciprocal Rank Fusion hybrid search performance against standard compliance guidelines",
-      "Validated service endpoints, access control logging, and background query latency profiles",
-    ],
-    demoHref: "/products/govgig",
-  },
-  {
-    slug: "yojana-ai",
-    title: "Yojana-AI",
-    subtitle: "Government Scheme Discovery & Eligibility RAG",
-    industry: "Government",
-    technologies: ["FastAPI", "LangGraph", "Qdrant", "Ollama", "Groq", "Docker", "AWS"],
-    pilotSignals: [
-      { label: "Scheme database", value: "2,153 indexed" },
-      { label: "Vector database", value: "Qdrant" },
-      { label: "Self-healing RAG", value: "Corrective loop" },
-    ],
-    summary:
-      "Government scheme matching and eligibility RAG architecture leveraging corrective loops and metadata-filtered retrieval.",
-    challenge:
-      "Citizens and support networks struggle to match individuals with complex, fragmented public welfare eligibility criteria and application guides.",
-    solution:
-      "Yojana-AI routes eligibility queries using structured logic, Qdrant metadata vector searches, and self-corrective retrieval loops.",
-    outcomes: [
-      "Validated self-corrective RAG retrieval loops against simulated eligibility profiles",
-      "Indexed and triaged user query relevance against a comprehensive public scheme corpus",
-      "Designed a hybrid inference model to fallback on local Ollama hosting to preserve responsiveness",
-    ],
-    demoHref: "/products/yojana-ai",
-  },
-  {
-    slug: "claimlens",
-    title: "ClaimLens AI",
-    subtitle: "Multi-Modal Claims Fraud Intelligence",
-    industry: "Insurance",
-    technologies: ["FastAPI", "CatBoost", "OpenCV", "Neo4j", "Groq", "Streamlit"],
-    pilotSignals: [
-      { label: "Explainable signals", value: "145 ML features" },
-      { label: "Relational maps", value: "Neo4j graphs" },
-      { label: "Classification", value: "CatBoost model" },
-    ],
-    summary:
-      "Multi-modal insurance claims risk scoring, document scans, and relational network graph triaging.",
-    challenge:
-      "Claims review adjusters need explainable risk scoring to quickly flag document discrepancies and coordinated claim anomalies.",
-    solution:
-      "ClaimLens integrates a CatBoost machine learning model, OpenCV document analysis, Neo4j network graphs, and plain-language explainability logs.",
-    outcomes: [
-      "Evaluated explainable claim scoring models on synthetic test files using CatBoost classification",
-      "Simulated document scan verification for typical structured form anomalies using OpenCV libraries",
-      "Mapped and analyzed simulated claims coordination rings inside a local relational graph database",
-    ],
-    demoHref: "/products/claimlens",
-  },
-  {
     slug: "desidesk-rag",
-    title: "DesiDesk RAG",
-    subtitle: "Multilingual Support & FAQ Assistant",
-    industry: "Enterprise",
-    technologies: ["FastAPI", "ChromaDB", "Redis", "Groq", "SQLite", "Prometheus"],
+    title: "DESIDESK RAG — Multilingual Support Microservice",
+    subtitle: "LangGraph conditional routing with Redis cache + SQLite session memory",
+    industry: "E-commerce / Customer Support",
+    technologies: ["FastAPI", "LangGraph", "ChromaDB", "Redis", "SQLite", "Groq", "Prometheus"],
     pilotSignals: [
-      { label: "Memory caching", value: "Redis active" },
-      { label: "Session store", value: "SQLite cache" },
-      { label: "Grounding search", value: "ChromaDB" },
+      { label: "Production testing cache hit rate", value: "40-60%" },
+      { label: "Response latency on cache hits", value: "<50ms" },
+      { label: "Single instance throughput", value: "50 req/s" },
     ],
     summary:
-      "Bilingual support FAQ assistant microservice with conversation memory and high-speed caching filters.",
+      "Redis cache eliminates redundant LLM calls for frequent queries. Confidence-based routing ensures low-quality retrievals escalate to full LLM generation rather than returning poor answers.",
     challenge:
-      "Enterprise helpdesks require highly reliable, low-latency, bilingual support answers while preserving context across dialogue steps.",
+      "Customer queries in English and Hindi require context-aware, low-latency responses without burning LLM budget on repeated questions.",
     solution:
-      "DesiDesk deploys multilingual embeddings, ChromaDB vector matching, SQLite session storage, and high-speed Redis caching.",
+      "Redis cache eliminates redundant LLM calls for frequent queries. Confidence-based routing ensures low-quality retrievals escalate to full LLM generation rather than returning poor answers.",
     outcomes: [
-      "Monitored caching ratios and metrics under simulated support load profiles",
-      "Preserved conversational context and threads successfully across active sessions",
-      "Validated bilingual routing accuracy against template knowledge base articles",
+      "LangGraph pipeline: Language Detection → Redis Cache Check → ChromaDB Retrieval → Confidence Router → Groq LLM",
+      "Redis caching for <50ms repeated query response",
+      "SQLite session store for multi-turn conversation context (5-turn window)",
+      "Prometheus /metrics endpoint for production monitoring from day one",
+      "Confidence threshold routing (0.3) — low-confidence queries bypass cache directly to LLM",
     ],
-    demoHref: "/products/desidesk-rag",
-  },
-  {
-    slug: "flowsight",
-    title: "FlowSight AI",
-    subtitle: "Shipment Delay Prediction & Explainability",
-    industry: "Supply Chain",
-    technologies: ["CatBoost", "XGBoost", "LightGBM", "DuckDB", "FastAPI", "Streamlit"],
-    pilotSignals: [
-      { label: "Development phase", value: "Active" },
-      { label: "Feature store", value: "DuckDB backend" },
-      { label: "Predictor models", value: "Ensemble ML" },
-    ],
-    summary:
-      "Ensemble ML classifier and feature store to predict and explain logistics delay reasons. (In Active Development).",
-    challenge:
-      "Supply-chain coordinators require early visibility into shipment delay risk, expected duration, and probable reasons to mitigate operational delays.",
-    solution:
-      "FlowSight AI utilizes DuckDB feature stores, ensemble machine learning classifiers (CatBoost, XGBoost, LightGBM), and dynamic risk explanation scripts.",
-    outcomes: [
-      "Constructed and tested delay estimation models using logistics dataset matrices",
-      "Organized shipping and route features inside a structured DuckDB feature store blueprint",
-      "Marked delay reason classification and explainability scripts as an active-development pilot blueprint",
-    ],
-    demoHref: "/products/flowsight",
+    demoHref: "/#book-slot",
   },
   {
     slug: "ai-readiness-studio",
-    title: "AI Readiness Intelligence Studio",
-    subtitle: "AI Opportunity Discovery & Roadmap Generator",
-    industry: "Enterprise",
-    technologies: ["Next.js", "FastAPI", "LangGraph", "PostgreSQL", "pgvector", "Ollama"],
+    title: "AI READINESS INTELLIGENCE STUDIO — Consulting Discovery Platform",
+    subtitle: "9-node stateful LangGraph multi-agent with human-in-loop approval",
+    industry: "Consulting / Enterprise Transformation",
+    technologies: ["FastAPI", "LangGraph", "Next.js", "PostgreSQL", "Ollama", "Terraform", "GCP"],
     pilotSignals: [
-      { label: "Orchestrator nodes", value: "Stateful Graph" },
-      { label: "Export options", value: "PDF/DOCX/PPTX" },
-      { label: "Opportunity map", value: "Readiness matrix" },
+      { label: "Discovery-to-deliverable time", value: "1 Session" },
+      { label: "Export formats compiled", value: "PDF/Word/PPT" },
+      { label: "Ollama fallback connectivity", value: "Offline" },
     ],
     summary:
-      "AI opportunity discovery, technical feasibility matrices, and 90-day pilot roadmap generators.",
+      "9 specialized agents divide discovery, analysis, and reporting into discrete, reviewable steps. Human Review Mode preserves consultant judgment before approval. One-click export produces client-ready PDF/Word/PowerPoint instantly.",
     challenge:
-      "Consultants, opportunity leaders, and enterprise transformation stakeholders need to systematically map business documents to clear AI priorities.",
+      "Consulting teams spend weeks manually conducting AI readiness assessments and producing formatted client deliverables. The process is inconsistent and doesn't scale.",
     solution:
-      "This studio deploys a stateful multi-agent LangGraph workflow to compile prioritized bottlenecks, technical risk registers, and exportable PPT/PDF reports.",
+      "9 specialized agents divide discovery, analysis, and reporting into discrete, reviewable steps. Human Review Mode preserves consultant judgment before approval. One-click export produces client-ready PDF/Word/PowerPoint instantly.",
     outcomes: [
-      "Validated a multi-agent opportunity analysis workflow inside a private pilot sandbox",
-      "Engineered automated export libraries to generate comprehensive report assets in PDF, DOCX, and PPTX formats",
-      "Built and tested interactive opportunity mapping grids with discovery team stakeholders",
+      "9 specialized LangGraph agents: Discovery → Bottleneck → Opportunity → Priority → Readiness → Risk → Pilot → Roadmap → Report",
+      "LLM adaptive routing: Groq cloud primary + Ollama local fallback (offline-capable)",
+      "Dual DB: PostgreSQL + pgvector (production) with SQLite + in-memory fallback (dev)",
+      "PDF, DOCX (Word), PPTX (PowerPoint) exporter pipeline",
+      "GCP Terraform deployment: Compute Engine VM + GCS bucket for model persistence",
     ],
-    demoHref: "/products/ai-readiness-studio",
+    demoHref: "/#book-slot",
+  },
+  {
+    slug: "flowsight",
+    title: "FLOWSIGHT AI — Supply Chain Delay Prediction",
+    subtitle: "3-model ML ensemble with DuckDB feature store + vendor enrichment",
+    industry: "Logistics / Supply Chain",
+    technologies: ["FastAPI", "CatBoost", "XGBoost", "LightGBM", "DuckDB", "Groq", "Streamlit", "Plotly"],
+    pilotSignals: [
+      { label: "Binary delay classification accuracy", value: "84.7%" },
+      { label: "Delay duration regression MAE", value: "1.24 days" },
+      { label: "Accuracy lift from vendor metrics", value: "+3.2%" },
+    ],
+    summary:
+      "Ensemble of gradient boosting models (not neural networks) dramatically outperforms transformers on tabular supply chain data. Vendor enrichment layer adds domain context that raw features miss. LLM explanations make predictions actionable for non-technical logistics managers.",
+    challenge:
+      "Transformer and neural network approaches failed on 15k tabular records (61% accuracy, severe overfitting). Needed interpretable predictions with business-readable explanations.",
+    solution:
+      "Ensemble of gradient boosting models (not neural networks) dramatically outperforms transformers on tabular supply chain data. Vendor enrichment layer adds domain context that raw features miss. LLM explanations make predictions actionable for non-technical logistics managers.",
+    outcomes: [
+      "CatBoost + XGBoost + LightGBM ensemble (binary, regression, multi-class)",
+      "DuckDB embedded feature store for low-latency feature lookups",
+      "Vendor reliability + route enrichment layers (50 vendors, 2,449 routes)",
+      "Groq LLaMA plain-English delay explanation generation",
+      "Streamlit + Plotly dashboard with FastAPI backend",
+    ],
+    demoHref: "/#book-slot",
   },
 ];
 

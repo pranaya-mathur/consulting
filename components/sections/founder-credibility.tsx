@@ -6,23 +6,23 @@ import { FadeIn } from "@/components/motion/fade-in";
 const highlights = [
   {
     icon: Sparkles,
-    title: "Working blueprints, not mockups",
-    description: "We bring pre-built, working code assets across RAG systems, multilingual citizen tools, healthcare workflows, and insurance engines to accelerate your timeline.",
+    title: "9 production-grade accelerators — not mockups",
+    description: "Every accelerator is backed by a private code repository: LangGraph agents, vector pipelines, ML ensembles, document AI, and governance layers — built and tested against real data.",
   },
   {
     icon: ShieldCheck,
-    title: "Focus on verifiable production-readiness",
-    description: "Every blueprint includes hallucination metrics, custom evaluation harnesses, and security protocols designed for enterprise deployment from day one.",
+    title: "Verifiable production-readiness from day one",
+    description: "VeriShield runs automated red-team CI. Yojana-AI has live AWS Fargate deployment with Terraform IaC. ClaimLens has a 4-engine fraud pipeline with Prometheus monitoring. No theoretical architectures.",
   },
   {
     icon: FileSpreadsheet,
-    title: "Rigorous documentation & team handoff",
-    description: "No vendor lock-in. We deliver full source code ownership, clean architectural blueprints, operational documentation, and workshops to train your engineers.",
+    title: "Full IP transfer — Helm charts, Terraform, and runbooks included",
+    description: "You receive source code, Helm/Terraform deployment artifacts, Alembic migrations, Prometheus dashboards, and architectural decision records. Your team can operate and extend the system independently.",
   },
   {
     icon: UserCheck,
-    title: "Pilot-first risk mitigation",
-    description: "Validate the exact technical feasibility and business ROI of your AI systems in a 4-6 week sandbox before committing to full production integrations.",
+    title: "Pilot-first risk mitigation with measurable outcomes",
+    description: "Yojana-AI delivers 85% answer quality at $20/month operational cost. FlowSight achieves 84.7% delay prediction accuracy. ClaimLens processes claims in <2 seconds. Pilots produce measurable baselines, not slide promises.",
   },
 ];
 

@@ -26,32 +26,28 @@ export const howItWorksSteps = [
 ] as const;
 
 export const impactMetrics = [
-  { value: 9, suffix: "", label: "Repo-grounded accelerators" },
-  { value: 4, suffix: "-6 wks", label: "Focused pilot timeline" },
-  { value: 3, suffix: "", label: "Secure deployment topologies" },
-  { value: 1, suffix: "", label: "Founder-led engineering studio" },
+  { value: 9, suffix: "", label: "Production-grade accelerators (code in vault)" },
+  { value: 4, suffix: "-6 wks", label: "Focused pilot-to-validation timeline" },
+  { value: 5, suffix: "+", label: "Regulated industries served" },
+  { value: 1, suffix: "", label: "Founder-led engineering studio (no subcontracting)" },
 ] as const;
 
 export const services = [
   {
     title: "RAG & Knowledge Intelligence",
-    description:
-      "Document-grounded systems to query policies, SOPs, support logs, and internal documentation across healthcare, legal, and operational workflows.",
+    description: "Document-grounded retrieval systems built with hybrid FAISS+BM25 or Qdrant vector stores, domain-specific embeddings (InLegalBERT, BGE-M3), and self-correcting quality loops — for legal, government, and operational workflows."
   },
   {
     title: "AI Agents & Workflow Automation",
-    description:
-      "Coordinated AI agent networks to automate repetitive tasks like document reviews, multi-step approvals, onboarding triage, and operational reporting.",
+    description: "LangGraph-orchestrated multi-agent pipelines for patient intake automation, fraud triage, supply chain prediction, and consulting discovery — with stateful human-in-loop checkpoints and full IP handoff."
   },
   {
     title: "AI Governance & VeriShield Layer",
-    description:
-      "Custom verification layers, structured policy graphs, local audit logs, and hallucination guardrails to ensure business-critical LLM outputs remain grounded.",
+    description: "3-tier deterministic safety architecture: fast regex/pattern checks, semantic signal detection, and LangGraph audit agent. DPDP 2023-aligned PII detection. Zero-trust API surface. Supports air-gapped and on-premise deployment."
   },
   {
-    title: "AI Adoption & Training",
-    description:
-      "Role-based hands-on upskilling, structured AI roadmap design, and practical developer enablement workshops for safe internal adoption.",
+    title: "AI Adoption & Workforce Training",
+    description: "Role-specific AI learning paths, interactive prompt labs, and safety scenario exercises via AetherAI — an enterprise SaaS platform with Supabase auth, progress tracking, and manager adoption analytics dashboards."
   },
 ] as const;
 
@@ -60,19 +56,19 @@ export const testimonials = [
     quote:
       "The VeriShield pilot architecture gave our team a clear path for compliance review. The audit trails are exactly what our governance team wanted to see.",
     author: "VP of Engineering (Design Partner)",
-    organization: "FinTech Pilot Sandbox",
+    organization: "FinTech Governance Pilot — VeriShield Evaluation",
   },
   {
     quote:
       "ClaimLens showed us that we can automate a significant portion of our triage without risking hallucination. The auditable evidence trail is a game changer.",
     author: "Head of Claims Innovation (Design Partner)",
-    organization: "Insurance Pilot Evaluation",
+    organization: "Insurance Claims Pilot — ClaimLens AI Evaluation",
   },
   {
     quote:
       "Evaluating Yojana-AI allowed us to verify scheme intelligence across multiple regional languages. Grounding responses with citations solved our trust issue.",
     author: "Technical Consultant",
-    organization: "Multilingual Service Portal Pilot",
+    organization: "Government Services Pilot — Yojana-AI Evaluation",
   },
 ] as const;
 
@@ -90,7 +86,7 @@ export const faqs = [
   {
     question: "What is VeriShield?",
     answer:
-      "VeriShield is our customizable guard layer for LLM deployments. It enforces retrieval-grounded responses, runs policy check graphs, and creates audit trails to detect and control hallucination-prone responses in regulated applications.",
+      "VeriShield (Sovereign-AI v4.1.0-LTS) is our production-hardened LLM guardrail platform. It runs a 3-tier Control Tower: fast regex/PII checks (Tier 1, <5ms), embedding-based semantic detection (Tier 2), and a LangGraph audit agent for policy reasoning (Tier 3). It is India DPDP 2023-aware, zero-trust authenticated, and supports air-gapped deployment for banks, insurers, and healthcare organizations.",
   },
   {
     question: "How does the engagement model work?",

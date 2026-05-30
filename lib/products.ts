@@ -29,662 +29,579 @@ export type Product = {
 export const products: Product[] = [
   {
     id: "verishield",
-    name: "VeriShield / Sovereign-AI",
-    tagline: "Policy-Driven LLM Guardrails & Verification Layer",
-    description:
-      "Policy-driven LLM guardrails and verification layer for inputs and outputs in controlled environments.",
-    overview:
-      "VeriShield sits as a proxy in front of your LLM pipelines — enforcing retrieval-grounded responses, compliance graphs, and local audit logs to significantly reduce compliance and hallucination risk.",
+    name: "VERISHIELD — LLM Guardrail & Verification Gateway",
+    tagline: "Production-grade, air-gapped LLM safety for regulated enterprises",
+    description: "A deterministic, policy-driven safety layer for regulated enterprises with a 3-tier Control Tower.",
+    overview: "A deterministic, policy-driven safety layer with a 3-tier Control Tower: Tier 1 (regex/pattern, <5ms), Tier 2 (embedding-based semantic signals), Tier 3 (LangGraph audit agent for deep reasoning). India DPDP 2023-aware PII detection (Aadhaar, PAN, UPI). Zero-trust API surface with x-api-key / Bearer JWT auth. Redacted-by-default persistence. Optional air-gapped deployment.",
     features: [
-      "Three-tier routing/detection: Regex/heuristics, Semantic embeddings, and agentic review",
-      "Dynamic YAML-driven policy graphs and enforcement configurations",
-      "Sovereign PII detection helpers and compliance verification packs",
-      "Zero-trust API service, containerized deployment blueprints",
+      "Tier 1 checks (regex/pattern, <5ms) with India DPDP 2023-aware PII detection",
+      "Tier 2 embedding-based semantic signals for prompt injection checks",
+      "Tier 3 LangGraph audit agent for deep policy reasoning and verification",
+      "Zero-trust API surface with x-api-key / Bearer JWT authentication"
     ],
-    industries: ["Banking", "Healthcare", "Government", "Insurance"],
+    industries: ["BFSI", "Healthcare", "Insurance", "Regulated Enterprise"],
     relatedCaseStudy: "verishield",
     demoHref: "/live-demo",
-    businessProblem:
-      "Teams deploying LLMs need configurable controls for unsafe inputs, PII exposure, unsupported claims, policy violations, and auditability.",
-    pilotValidation:
-      "Validate policy-based input/output checks, tiered detection, PII helper rules, audit metadata, and deployment fit for controlled environments.",
-    pilotScope:
-      "4-week sandboxed pilot validating input PII protection rules, custom YAML policy enforcement, and edge proxy compatibility.",
-    status: "Stable Core / Pilot-Ready",
-    maturity: "Pilot-ready",
-    techStack: ["FastAPI", "LangGraph", "Docker", "Helm", "Ollama", "GCP"],
+    businessProblem: "LLM outputs in regulated industries (BFSI, healthcare) contain PII leakage, prompt injections, and hallucinated facts with no deterministic enforcement layer.",
+    pilotValidation: "Automated red-team harness with adversarial dataset (PII, jailbreaks, prompt injection). Severity-gated CI pipeline blocks high-severity bypasses.",
+    pilotScope: "4-week sandboxed pilot validating PII redaction, 3-tier safety checks, and zero-trust authentication gateway integration.",
+    status: "v4.1.0-LTS — Production Hardened",
+    maturity: "Production-ready",
+    techStack: ["FastAPI", "LangGraph", "LangChain", "Prometheus/OTel", "Helm/K8s", "Docker Compose", "Python async", "zero-trust auth middleware"],
     clientSafeHighlights: [
-      "YAML-based policy engine",
-      "Tiered semantic & agent routing",
-      "Risk audit metadata logging",
+      "3-tier Control Tower architecture",
+      "India DPDP 2023-aware PII detection",
+      "Redacted-by-default persistence",
+      "Air-gapped deployment ready"
     ],
     architecture: {
-      pattern: "LLM Guardrail & Verification Gateway",
-      description:
-        "A policy-driven verification layer that sits before and after LLM/RAG systems to check risky inputs, PII exposure, unsupported claims, and policy violations.",
+      pattern: "3-tier deterministic safety layer with LangGraph audit agent",
+      description: "A deterministic, policy-driven safety layer with a 3-tier Control Tower: Tier 1 (regex/pattern, <5ms), Tier 2 (embedding-based semantic signals), Tier 3 (LangGraph audit agent for deep reasoning).",
       flow: [
-        "User or application request",
-        "VeriShield API gateway",
-        "Input policy checks",
-        "PII and risk detection",
-        "Semantic verification layer",
-        "Optional agentic review",
-        "LLM or RAG system",
-        "Output verification",
-        "Audit metadata and human escalation",
+        "Request received by FastAPI auth middleware",
+        "Tier 1 regex/pattern scanning checks for PII",
+        "Tier 2 semantic classifier detects prompt injection",
+        "Tier 3 LangGraph audit agent performs policy reasoning",
+        "Request routed safely to upstream LLM API",
+        "Response parsed, redacted, and verified",
+        "Prometheus/OpenTelemetry records traffic audit"
       ],
       components: [
-        "Input/output policy checks",
-        "Tiered risk detection",
-        "PII helper rules",
-        "Semantic verification",
-        "Optional agentic review path",
-        "Audit metadata logging",
-        "Controlled API gateway",
+        "FastAPI verification gateway",
+        "Tier 1 PII regex/pattern parser",
+        "Tier 2 semantic embedding engine",
+        "Tier 3 LangGraph audit agent",
+        "Zero-trust auth middleware",
+        "Helm & K8s deployment charts"
       ],
       deploymentOptions: [
-        "Client-managed environment",
-        "Private cloud pilot",
-        "Controlled cloud deployment",
-        "Local/edge evaluation setup",
+        "On-premise deployment",
+        "Air-gapped secure environment",
+        "Private cloud (Helm/K8s)"
       ],
       governanceControls: [
-        "Policy review",
-        "Audit metadata",
-        "Human escalation",
-        "Controlled rollout",
-        "Data minimization patterns",
+        "India DPDP 2023 PII audit rules",
+        "Severity-gated CI blockages",
+        "Redacted-by-default persistence",
+        "Zero-trust JWT authentication"
       ],
       integrationPoints: [
-        "Existing LLM apps",
-        "RAG pipelines",
-        "Internal policy repositories",
-        "Logging/monitoring systems",
-        "Authentication gateway",
-      ],
-    },
+        "Enterprise LLM APIs",
+        "LangChain & LangGraph frameworks",
+        "Prometheus & OpenTelemetry tools"
+      ]
+    }
   },
   {
-    id: "aetherai-training",
-    name: "AetherAI Workforce Training",
-    tagline: "Role-Based AI Adoption & Upskilling Platform",
-    description:
-      "Role-based AI literacy, safety practices, and internal team enablement dashboard.",
-    overview:
-      "AetherAI delivers structured learning paths, safe prompt sandboxes, and quiz milestones to align operational teams with security, compliance, and productivity workflows.",
+    id: "aetherail",
+    name: "AETHERAIL — Role-Based AI Workforce Training & Adoption Platform",
+    tagline: "Enterprise AI literacy with role-specific paths, prompt labs, and manager analytics",
+    description: "Next.js 15 SaaS platform for structured role-specific learning pathways, safety modules, and interactive prompt sandboxes.",
+    overview: "Next.js 15 SaaS platform with 5 role-specific learning paths, mandatory safety modules, interactive split-screen prompt lab, real-world AI scenario exercises, MCQ quizzes with instant feedback, and a manager-only adoption analytics dashboard.",
     features: [
-      "Role-specific upskilling and learning path mapping",
-      "AI safety, privacy, and PII awareness modules",
-      "Interactive prompt sandbox laboratory with dilemma scenario simulations",
-      "Manager-level adoption analytics, metrics tracking, and visualization boards",
+      "5 role-specific learning paths and mandatory safety modules",
+      "Interactive split-screen prompt laboratory and scenario exercises",
+      "MCQ quizzes with instant grading and direct feedback",
+      "Manager-only adoption analytics dashboard with Recharts"
     ],
-    industries: ["Enterprise", "Banking", "Healthcare", "Government"],
-    relatedCaseStudy: "aetherai-training",
+    industries: ["Enterprise", "FinTech", "Healthcare", "Government"],
+    relatedCaseStudy: "aetherail",
     demoHref: "/#book-slot",
-    businessProblem:
-      "Teams are adopting AI tools without consistent training, safety practices, role-specific workflows, or manager visibility.",
-    pilotValidation:
-      "Validate role-based learning paths, prompt labs, safety scenarios, quizzes, and adoption analytics for internal AI enablement.",
-    pilotScope:
-      "4-week department sandbox evaluating prompt laboratory, safety scenarios, learning pathways, and usage analytics.",
-    status: "Production Blueprint / Functional Portal",
+    businessProblem: "Organizations deploy AI tools but employees lack structured, role-aware training, creating inconsistent adoption and compliance risk.",
+    pilotValidation: "Role-based progress tracking, prompt evaluation scoring, and manager report generation — all available in under 10 minutes from cold start.",
+    pilotScope: "4-week department trial validating learning path enrollment, split-screen prompt sandbox, and manager report analytics.",
+    status: "SaaS Platform — Production Ready",
     maturity: "Production-ready",
-    techStack: ["Next.js", "TypeScript", "Tailwind", "Supabase", "PostgreSQL", "Recharts"],
+    techStack: ["Next.js 15 (App Router, Server Actions)", "TypeScript (strict)", "Supabase (Auth + PostgreSQL + Realtime)", "Tailwind CSS", "shadcn/ui", "Recharts", "next-themes"],
     clientSafeHighlights: [
-      "Role-specific curriculums",
-      "Manager usage analytics dashboard",
-      "Interactive prompt laboratory",
+      "5 role-specific pathways",
+      "Interactive split-screen prompt lab",
+      "Manager adoption dashboard",
+      "Zero-setup demo mode"
     ],
     architecture: {
       pattern: "Role-Based AI Enablement Portal",
-      description:
-        "Structured learning paths, prompt sandboxes, and quiz milestones to align operational teams with security, compliance, and productivity workflows.",
+      description: "Structured learning paths, prompt sandboxes, and quiz milestones to align operational teams with security, compliance, and productivity workflows.",
       flow: [
-        "Employee login / demo access",
-        "Role selection",
-        "Role-based learning path",
-        "Safety modules",
-        "Prompt practice lab",
-        "Scenario exercises",
-        "Quiz and progress tracking",
-        "Manager adoption dashboard",
+        "User registers and authenticates via Supabase Auth",
+        "User enrolls in specific operational learning path",
+        "Completed mandatory safety modules",
+        "Practices in interactive split-screen prompt lab",
+        "Takes scenario exercises and MCQ tests",
+        "Telemetry recorded in PostgreSQL via Server Actions",
+        "Managers access real-time Recharts dashboards"
       ],
       components: [
-        "Learning path engine",
-        "Safety module library",
-        "Prompt lab",
-        "Scenario simulator",
-        "Quiz engine",
-        "Progress tracker",
-        "Manager analytics dashboard",
+        "Next.js App Router frontend",
+        "Supabase Auth & PostgreSQL database",
+        "Interactive prompt lab environment",
+        "Manager analytics interface",
+        "Quiz & testing modules"
       ],
       deploymentOptions: [
-        "Internal training portal",
-        "Department pilot",
-        "Organization-wide adoption rollout",
+        "Enterprise SaaS cloud",
+        "Self-hosted container setup",
+        "Local developer workspace"
       ],
       governanceControls: [
-        "Responsible AI training",
-        "Safety module completion",
-        "Manager visibility",
-        "Usage reporting",
+        "Mandatory safety certifications",
+        "Manager usage monitoring",
+        "Role-based access controls",
+        "Zero-dependency demo mode"
       ],
       integrationPoints: [
-        "HR/training systems",
-        "SSO/auth provider",
-        "Internal AI policy docs",
-        "Manager reporting workflow",
-      ],
-    },
+        "Supabase Authentication & DB",
+        "Internal LMS/HR platforms",
+        "Upstream LLM prompt sandboxes"
+      ]
+    }
   },
   {
     id: "mediflow",
-    name: "MediFlow",
-    tagline: "Patient Onboarding & Clinic Operations Blueprint",
-    description:
-      "Patient onboarding, secure document handling, and AI-assisted clinical intake automation.",
-    overview:
-      "MediFlow structures patient intake, coordinates clinical staff, and handles document uploads securely without storing patient data outside approved perimeters.",
+    name: "MEDIFLOW — Patient Intake & Clinic Workflow System",
+    tagline: "Full-stack patient onboarding with AI-assisted intake and secure document routing",
+    description: "Full-stack clinical patient intake platform featuring multi-role dashboards and secure object storage.",
+    overview: "Full-stack platform: Next.js 15 frontend + FastAPI backend + PostgreSQL (SQLAlchemy 2.0 + Alembic migrations) + Celery/Redis background workers. MinIO (S3-compatible) for secure patient document storage. LangGraph + LangChain agents for intelligent intake assistance. Multi-role dashboards (Patient / Staff / Admin).",
     features: [
-      "Automated clinical patient intake and validation pipelines",
-      "Interactive clinic management dashboards for patients, staff, and administrators",
-      "Secure document management using object-compatible local storage arrays",
-      "AI-powered intake assistance using structured logic workflows",
+      "Multi-role dashboards for Patients, Staff, and Administrators",
+      "AI-guided patient intake assistance powered by LangGraph and LangChain",
+      "Secure document management utilizing MinIO S3-compatible storage",
+      "Asynchronous background workflow tasks run by Celery & Redis"
     ],
-    industries: ["Healthcare"],
+    industries: ["Healthcare", "Clinics", "Telehealth"],
     relatedCaseStudy: "mediflow",
     demoHref: "/#book-slot",
-    businessProblem:
-      "Healthcare teams spend too much time on repetitive intake, patient documentation, and operational coordination.",
-    pilotValidation:
-      "Validate digital intake flows, role-based clinic dashboards, document handling, AI-assisted intake guidance, and staff workflow orchestration.",
-    pilotScope:
-      "4-week operations pilot validating digitised intake, asynchronous processing queues, local storage protocols, and intake guidance.",
-    status: "Stable Sandbox Architecture",
+    businessProblem: "Clinics manage patient registration through paper forms and disconnected tools, causing intake delays, data errors, and compliance gaps with medical records.",
+    pilotValidation: "Automated patient intake flow, real-time clinic metrics dashboard, AI-guided intake agent, and background document processing — end-to-end in one containerized stack.",
+    pilotScope: "4-week operations pilot validating digital onboarding forms, document upload, and staff queue synchronization.",
+    status: "Stable Sandbox Architecture — Pilot Ready",
     maturity: "Pilot-ready",
-    techStack: ["Next.js", "FastAPI", "PostgreSQL", "Celery", "Redis", "MinIO/S3"],
+    techStack: ["Next.js 15", "FastAPI", "PostgreSQL + SQLAlchemy 2.0", "Alembic", "Celery + Redis", "MinIO (S3)", "LangGraph", "LangChain", "Groq", "Radix UI", "TanStack Query v5", "Docker Compose"],
     clientSafeHighlights: [
-      "Multi-role clinic management",
-      "Asynchronous background processing",
-      "Controlled storage patterns",
+      "Multi-role secure dashboards",
+      "LangGraph intake agent",
+      "Celery background processing",
+      "MinIO secure storage"
     ],
     architecture: {
-      pattern: "Patient Intake & Clinic Workflow System",
-      description:
-        "Patient onboarding, secure document handling, and AI-assisted clinical intake automation patterns.",
+      pattern: "Full-stack Patient Intake & Clinic Workflow System",
+      description: "Next.js 15 frontend + FastAPI backend + Celery asynchronous background tasks + MinIO secure storage.",
       flow: [
-        "Patient intake request",
-        "Digital intake form",
-        "Validation layer",
-        "Document upload and controlled storage",
-        "AI-assisted intake guidance",
-        "Staff review queue",
-        "Clinic dashboard",
-        "Operational handoff",
+        "Patient initiates onboarding registration form",
+        "Intake documents uploaded securely to MinIO",
+        "LangGraph intake agent parses and validates fields",
+        "Celery background workers process OCR and verification",
+        "Patient profile and state saved in PostgreSQL",
+        "Clinic staff verifies patient on metrics dashboard"
       ],
       components: [
-        "Patient intake flow",
-        "Role-based dashboards",
-        "Document handling",
-        "AI intake assistant",
-        "Background task processing",
-        "Staff review queue",
+        "Next.js clinic interface dashboards",
+        "FastAPI backend gateway",
+        "Celery asynchronous workers",
+        "MinIO object storage server",
+        "LangGraph intelligent agentic flows"
       ],
       deploymentOptions: [
-        "Clinic workflow pilot",
-        "Department sandbox",
-        "Controlled healthcare operations deployment",
+        "Single-command Docker Compose",
+        "Private cloud deployment",
+        "On-premise clinic server"
       ],
       governanceControls: [
-        "Human staff review",
-        "Role-based access",
-        "Controlled document handling",
-        "Operational auditability",
+        "Multi-role RBAC authorization",
+        "HIPAA-compliant document storage patterns",
+        "Alembic DB migrations and version controls",
+        "Staff verification checkpoints"
       ],
       integrationPoints: [
-        "Clinic operations workflow",
-        "Document storage",
-        "Staff dashboard",
-        "Patient communication flow",
-      ],
-    },
+        "MinIO object storage API",
+        "PostgreSQL DB",
+        "Groq inference API",
+        "Redis message queue"
+      ]
+    }
   },
   {
     id: "govgig",
-    name: "GovGig AI",
-    tagline: "Federal Contracting Compliance Intelligence",
-    description:
-      "Federal contracting compliance RAG assistant for dense regulation lookup and automated document drafting.",
-    overview:
-      "GovGig AI unifies dense vector and keyword search pipelines to parse complex safety, procurement, and compliance clauses, generating rapid draft layouts.",
+    name: "GOVGIG AI — Contracting Compliance RAG Assistant",
+    tagline: "Legal clause analysis RAG with hybrid retrieval and Indian law domain embeddings",
+    description: "Hybrid legal retrieval RAG platform combining dense and sparse search indices and domain-specific embeddings.",
+    overview: "Hybrid RAG system combining FAISS (dense) + BM25 (sparse) retrieval with InLegalBERT domain embeddings (trained on Indian legal text). FastAPI backend with Prometheus + Grafana monitoring stack. Source quality metrics per query (Indian Acts, case laws, clause DB). LangGraph + LangChain orchestration. Full Docker Compose deployment with Grafana dashboard included.",
     features: [
-      "Targeted procurement and compliance safety regulation lookup",
-      "Hybrid search (dense vector + full-text) with Reciprocal Rank Fusion",
-      "Structured intelligent routing across specialized query flows",
-      "Automated drafting assistance for contract letters, queries, and filings",
+      "Hybrid search combining FAISS dense and BM25 sparse indices",
+      "InLegalBERT domain-specific embeddings trained on Indian legal text",
+      "Query-level source quality metrics mapping Indian Acts and case laws",
+      "Prometheus + Grafana monitoring stack for RAG quality and latency tracking"
     ],
-    industries: ["Government", "Enterprise"],
+    industries: ["Legal", "Government Contracting", "Compliance", "BFSI"],
     relatedCaseStudy: "govgig",
     demoHref: "/#book-slot",
-    businessProblem:
-      "Contracting, proposal, and compliance teams need fast, grounded answers across compliance clauses, RFIs, REAs, and procedural obligations.",
-    pilotValidation:
-      "Validate clause lookup, regulation search, RFI/REA drafting, procedural guidance, and citation-backed contracting workflows against selected regulation corpora.",
-    pilotScope:
-      "4-week compliance pilot validating regulation clause lookup, hybrid search accuracy, and automated proposal drafting templates.",
-    status: "Pilot-Ready / Functional RAG Engine",
+    businessProblem: "Legal teams waste hours manually reviewing contracts and compliance clauses against Indian Acts, case law, and regulatory guidelines without any AI assistance.",
+    pilotValidation: "Per-query source quality metrics. Grafana dashboard for RAG retrieval quality, latency trends, and error rates live from day one.",
+    pilotScope: "4-week legal team trial validating clause retrieval precision, hybrid search relevancy, and Grafana instrumentation.",
+    status: "Stable RAG Engine — Pilot Ready",
     maturity: "Pilot-ready",
-    techStack: ["FastAPI", "LangGraph", "PostgreSQL", "pgvector", "AWS", "Terraform"],
+    techStack: ["FastAPI", "LangChain", "LangGraph", "FAISS", "BM25", "InLegalBERT (HuggingFace)", "Groq (Llama 3.1 / 3.3)", "Prometheus", "Grafana", "Docker Compose"],
     clientSafeHighlights: [
-      "RRF hybrid search routing",
-      "Intelligent agentic routers",
-      "Draft synthesis engine",
+      "Hybrid RRF dense-sparse search",
+      "InLegalBERT legal domain embeddings",
+      "Per-query source quality metrics",
+      "Prometheus + Grafana dashboards"
     ],
     architecture: {
-      pattern: "Contracting Compliance RAG Assistant",
-      description:
-        "Federal contracting compliance RAG assistant for dense regulation lookup and automated document drafting.",
+      pattern: "Hybrid Legal retrieval RAG & Observability Stack",
+      description: "FastAPI legal RAG server running hybrid FAISS+BM25 with InLegalBERT embeddings, monitored via Prometheus & Grafana.",
       flow: [
-        "Contracting query or draft request",
-        "Intent router",
-        "Regulation and clause retrieval",
-        "Hybrid search / reranking",
-        "Draft or guidance generation",
-        "Citation-backed output",
-        "Human review",
+        "Contracting query submitted by compliance officer",
+        "LangGraph orchestration splits and analyzes intent",
+        "FAISS (dense) and BM25 (sparse) pull matched clauses",
+        "InLegalBERT embeddings rerank matches for maximum accuracy",
+        "Source quality metrics compiled per query source",
+        "Groq synthesizes final citation-backed response",
+        "Prometheus records latencies and retrieval stats",
+        "Grafana renders performance metrics in real-time"
       ],
       components: [
-        "Intent routing",
-        "Clause lookup",
-        "Regulation retrieval",
-        "Query expansion",
-        "Draft assistance",
-        "Citation output",
-        "Feedback/telemetry hooks",
+        "FastAPI RAG gateway service",
+        "FAISS vector database",
+        "BM25 sparse indexer",
+        "InLegalBERT embedder model",
+        "LangGraph RAG pipeline controller",
+        "Prometheus & Grafana monitors"
       ],
       deploymentOptions: [
-        "Controlled document-corpus pilot",
-        "Proposal team assistant",
-        "Compliance review assistant",
+        "Containerized Docker Compose stack",
+        "Private cloud cluster"
       ],
       governanceControls: [
-        "Human review for all generated drafts",
-        "Citation-backed responses",
-        "Workflow logging",
-        "Approved corpus boundaries",
+        "Strict legal citation backing",
+        "Source quality metric gates",
+        "Latency and error tracking",
+        "Grounded answer compliance checks"
       ],
       integrationPoints: [
-        "Contracting document library",
-        "Proposal workflow",
-        "Compliance review process",
-        "Knowledge base",
-      ],
-    },
+        "Hugging Face models API",
+        "Groq inference API",
+        "Indian Acts & Case Law databases"
+      ]
+    }
   },
   {
     id: "yojana-ai",
-    name: "Yojana-AI",
-    tagline: "Government Scheme Discovery & Eligibility RAG",
-    description:
-      "Government scheme matching and eligibility verification RAG architecture.",
-    overview:
-      "Yojana-AI parses scheme databases, leveraging corrective loops to match user criteria against scheme criteria with citations.",
+    name: "YOJANA-AI — Public-Service Scheme Discovery RAG",
+    tagline: "Multilingual multi-agent RAG for Indian government scheme discovery with self-correcting retrieval loops",
+    description: "Highly optimized, multilingual multi-agent scheme discovery system running self-correcting RAG loops.",
+    overview: "LangGraph multi-agent RAG: Intent Agent (Ollama, local, <120ms) → Retrieval Agent (Qdrant, metadata-filtered, intent-aware top_k) → Quality Judge (LLM-as-judge, binary YES/NO) → Self-RAG + Corrective RAG loops → Generation Agent (Groq llama-3.3-70b). BGE-M3 (1024-dim, multilingual) embeddings. 10,812 semantically-chunked scheme chunks. AWS ECS Fargate deployment with Terraform IaC. $20-25/month operational cost.",
     features: [
-      "Indexed corpus of active public welfare schemes",
-      "Intelligent coordination with advanced vector storage",
-      "Self-RAG and Corrective RAG (CRAG) quality loops to audit retrieval accuracy",
-      "Cost-aware hybrid inference structure (local + cloud options)",
+      "Multi-agent LangGraph system: Intent, Retrieval, Quality Judge, and Generation",
+      "Self-RAG and Corrective RAG loops to eliminate retrieval gaps",
+      "BGE-M3 1024-dimensional multilingual open-source embeddings",
+      "AWS ECS Fargate deployment with auto-scaling via Terraform IaC"
     ],
-    industries: ["Government"],
+    industries: ["Government", "Public Services", "NGO", "Citizen Tech"],
     relatedCaseStudy: "yojana-ai",
     demoHref: "/#book-slot",
-    businessProblem:
-      "Citizens, public-sector teams, and service providers struggle to match users with relevant schemes, eligibility rules, benefits, and procedures across fragmented official documents.",
-    pilotValidation:
-      "Validate scheme discovery, eligibility matching, metadata-filtered retrieval, self-healing RAG loops, and cost-aware local/cloud inference strategy.",
-    pilotScope:
-      "4-week support pilot matching user criteria against scheme parameters with citation-backed validation loops.",
-    status: "Stable RAG Blueprint / Complete Dataset",
+    businessProblem: "Citizens and frontline workers cannot easily find or verify eligibility for 2,000+ government schemes across languages and ministries.",
+    pilotValidation: "85% answer quality without human-in-loop. Self-RAG triggers on <15% of queries. $5/month LLM cost vs $40-50 cloud-only baseline. 1.8-2.5s avg latency (no loops), 3.8-4.5s with Self-RAG.",
+    pilotScope: "4-week welfare pilot matching user parameters with scheme metadata across Hindi and English datasets.",
+    status: "Production Architecture — Pilot Ready",
     maturity: "Pilot-ready",
-    techStack: ["FastAPI", "LangGraph", "Qdrant", "Ollama", "Groq", "Docker", "AWS"],
+    techStack: ["FastAPI", "LangGraph", "LangChain", "Qdrant", "BGE-M3 embeddings", "Ollama (deepseek-r1:8b)", "Groq (llama-3.3-70b)", "Terraform", "AWS ECS Fargate", "CloudWatch", "Docker", "Pydantic"],
     clientSafeHighlights: [
-      "Multi-agent eligibility coordination",
-      "Corrective RAG verification loops",
-      "Metadata-filtered vector search",
+      "LangGraph multi-agent DAG",
+      "Self-RAG self-correcting loops",
+      "BGE-M3 multilingual indexing",
+      "Terraform AWS Fargate IaC"
     ],
     architecture: {
-      pattern: "Public-Service Scheme Discovery RAG",
-      description:
-        "Government scheme matching and eligibility verification RAG architecture.",
+      pattern: "Multi-agent Self-RAG + Corrective RAG on LangGraph DAG",
+      description: "Highly optimized LangGraph multi-agent pipeline using BGE-M3 embeddings and self-correcting CRAG/Self-RAG loops.",
       flow: [
-        "Citizen/officer query",
-        "Intent classification",
-        "Scheme corpus retrieval",
-        "Eligibility matching",
-        "Corrective retrieval loop",
-        "Citation-backed answer",
-        "Human escalation or application guidance",
+        "User query parsed by FastAPI RAG endpoint",
+        "Intent Agent classifies search intent and language (<120ms)",
+        "Retrieval Agent queries Qdrant with metadata filters",
+        "Quality Judge evaluates matched scheme relevance (YES/NO)",
+        "If NO, loops to self-corrective retrieval/web search",
+        "Generation Agent synthesizes output using Groq Llama 3.3",
+        "AWS CloudWatch logs request and performance telemetry"
       ],
       components: [
-        "Scheme document ingestion",
-        "Intent classifier",
-        "Metadata-filtered retrieval",
-        "Eligibility matching",
-        "Corrective retrieval",
-        "Answer generation",
-        "Escalation workflow",
+        "Intent Agent (Ollama local model)",
+        "Retrieval Agent (Qdrant vector store)",
+        "Quality Judge Agent (Groq)",
+        "Generation Agent (Groq Llama 3.3)",
+        "Self-RAG corrective workflow",
+        "Terraform ECS IaC scripts"
       ],
       deploymentOptions: [
-        "Public-service pilot",
-        "NGO/support desk assistant",
-        "Internal government-services assistant",
+        "AWS ECS Fargate autoscaling cluster",
+        "Docker Compose local container"
       ],
       governanceControls: [
-        "Citation-backed answers",
-        "Human escalation",
-        "Consent-aware flows",
-        "Controlled document updates",
+        "Automated binary quality judge",
+        "Metadata query filtering",
+        "Strict citation checking",
+        "Cost-optimized hybrid routing"
       ],
       integrationPoints: [
-        "Scheme document corpus",
-        "Citizen support workflow",
-        "Helpdesk/chat interface",
-        "Application guidance process",
-      ],
-    },
+        "Qdrant Cloud/Local",
+        "Groq & Ollama APIs",
+        "AWS ECS Fargate and CloudWatch"
+      ]
+    }
   },
   {
     id: "claimlens",
-    name: "ClaimLens AI",
-    tagline: "Multi-Modal Claims Fraud Intelligence",
-    description:
-      "Multi-modal insurance fraud classification, network graph analysis, and explainable claims triage.",
-    overview:
-      "ClaimLens merges tabular machine learning classifiers, computer vision verification checks, and network graph engines to flag claims risks transparently.",
+    name: "CLAIMLENS AI — Multi-Modal Insurance Claims Risk Pipeline",
+    tagline: "Multi-modal fraud detection across ML scoring, computer vision, graph analytics, and LLM explanation",
+    description: "Four-engine pipeline combining tabular machine learning, computer vision, graph analytics, and LLM triage.",
+    overview: "Four-engine pipeline: (1) ML Engine — CatBoost classifier with 145 features (text embeddings, behavioral patterns, document flags). (2) CV Engine — ResNet50 + Error Level Analysis for document forgery detection (PAN, Aadhaar, licenses). (3) Graph Engine — Neo4j fraud network detection (shared documents, suspicious connections). (4) LLM Engine — Groq-powered natural language verdict explanations in English and Hinglish. Semantic aggregation for unified verdict. <2s end-to-end with caching.",
     features: [
-      "Advanced machine learning classifier utilizing explainable claim features",
-      "Computer vision models for document authenticity and forgery analysis",
-      "Graph database engines to identify systemic risk networks and coordination rings",
-      "Natural language conversational audit explanations",
+      "ML Engine with CatBoost classifier and 145 explainable claim features",
+      "CV Engine with ResNet50 and ELA document forgery detection",
+      "Graph Engine with Neo4j to spot shared-identifier fraud rings",
+      "LLM Engine with Groq for detailed, natural English and Hinglish explanations"
     ],
-    industries: ["Insurance"],
+    industries: ["Insurance", "BFSI", "Claims Processing"],
     relatedCaseStudy: "claimlens",
     demoHref: "/#book-slot",
-    businessProblem:
-      "Insurance teams need faster triage, risk-signal detection, document authenticity checks, and explainable risk summaries across claim files.",
-    pilotValidation:
-      "Validate claim scoring, document checks, fraud-network signals, and explainable risk scores on sample claims.",
-    pilotScope:
-      "4-week insurance sandbox evaluating claims classification scoring, document scans, and risk-network mapping.",
-    status: "Complete Core / Functional Multi-Engine",
+    businessProblem: "Insurance fraud detection relies on manual review or single-signal rule engines that miss sophisticated fraud networks and document forgeries.",
+    pilotValidation: "Multi-modal verdict with document forgery detection, fraud network graph visualization, and customer-friendly AI explanations. <2s per claim with caching.",
+    pilotScope: "4-week insurance sandbox evaluating claims classification scoring, document scans, and risk-network mapping.",
+    status: "Production Ready — Complete Pipeline",
     maturity: "Production-ready",
-    techStack: ["FastAPI", "CatBoost", "OpenCV", "Neo4j", "Groq", "Streamlit"],
+    techStack: ["FastAPI", "CatBoost", "ResNet50", "OpenCV (ELA)", "Neo4j", "Groq (LLaMA)", "Streamlit (UI)", "LangChain", "Docker Compose", "Pydantic", "Python 3.10+"],
     clientSafeHighlights: [
-      "Multi-model risk scoring",
-      "Visual document authenticity checks",
-      "Relational network mapping",
+      "4-Engine Risk Pipeline",
+      "ResNet50 document forgery analysis",
+      "Neo4j fraud network mapping",
+      "Hinglish LLM explanations"
     ],
     architecture: {
-      pattern: "Multi-Modal Claims Risk Pipeline",
-      description:
-        "Multi-modal insurance risk classification, network analysis, and explainable claims triage.",
+      pattern: "Multi-modal Fusion Claims Risk Triage",
+      description: "Four-engine decision pipeline combining tabular ML, CV forgery detection, graph network mapping, and natural language explanations.",
       flow: [
-        "Claim file intake",
-        "Structured feature extraction",
-        "Document authenticity checks",
-        "Network-risk analysis",
-        "Risk scoring layer",
-        "Explanation generation",
-        "Human claims reviewer dashboard",
+        "Claim details and uploaded files submitted to FastAPI",
+        "CatBoost ML Engine computes claim fraud scores",
+        "ResNet50 CV Engine analyzes document Error Level Analysis",
+        "Neo4j Graph Engine maps shared addresses, emails, or phone rings",
+        "Aggregator consolidates metrics to compile final score",
+        "Groq LLM Engine outputs English or Hinglish explanation",
+        "Streamlit UI displays visual risk graphs and verdict"
       ],
       components: [
-        "Claim scoring",
-        "Document authenticity checks",
-        "Network-risk analysis",
-        "Explanation engine",
-        "Reviewer dashboard",
-        "Risk summary workflow",
+        "CatBoost tabular classifier",
+        "ResNet50 CV forgery model",
+        "Neo4j graph database",
+        "Groq explanation engine",
+        "Streamlit adjuster dashboard"
       ],
       deploymentOptions: [
-        "Insurance sandbox pilot",
-        "Fraud-review assistant",
-        "Claims triage workflow accelerator",
+        "Docker Compose local container stack",
+        "Private cloud API deployment"
       ],
       governanceControls: [
-        "Human adjuster final decision",
-        "Explainable risk signals",
-        "Audit-friendly summaries",
-        "Approved sample-data usage",
+        "Explainable feature rankings",
+        "Audit trail database records",
+        "Adversarial document verification",
+        "Manual adjuster validation overrides"
       ],
       integrationPoints: [
-        "Claims management system",
-        "Document upload workflow",
-        "Fraud review queue",
-        "Adjuster dashboard",
-      ],
-    },
+        "Core claims processing system",
+        "Neo4j Graph Server",
+        "Groq inference API"
+      ]
+    }
   },
   {
     id: "desidesk-rag",
-    name: "DesiDesk RAG",
-    tagline: "Multilingual Support & FAQ Assistant",
-    description:
-      "Multilingual FAQ and support RAG microservice with intelligent session memory and caching.",
-    overview:
-      "DesiDesk delivers fast, source-backed answers in multiple languages, leveraging session caching to maintain thread context and reduce API latency.",
+    name: "DESIDESK RAG — Multilingual Support RAG Microservice",
+    tagline: "Bilingual FAQ automation with Redis caching, SQLite session memory, and confidence-gated LangGraph routing",
+    description: "High-throughput support RAG microservice featuring Redis caching and session context persistence.",
+    overview: "LangGraph conditional workflow: Language Detection → Cache Check (Redis, <50ms hit) → Semantic Search (ChromaDB + sentence-transformers) → Confidence Router (threshold 0.3) → LLM Generation (Groq llama-3.3-70b) → Response Caching → SQLite Session Persistence. Prometheus metrics at /metrics. 200-400ms uncached, <50ms cached.",
     features: [
-      "High-accuracy bilingual RAG matching in multiple languages",
-      "Intelligent session memory and thread context preservation",
-      "High-speed caching for repetitive support query profiles",
-      "Observability integrations with performance metrics reporting",
+      "LangGraph pipeline with language detection and cache checks",
+      "High-speed Redis cache layers offering sub-50ms repeat query responses",
+      "SQLite session state database maintaining 5-turn message memory",
+      "Confidence threshold router to bypass caches for low-match queries"
     ],
-    industries: ["Enterprise", "Insurance", "Healthcare", "Government"],
+    industries: ["E-commerce", "SaaS", "Customer Support", "Fintech"],
     relatedCaseStudy: "desidesk-rag",
     demoHref: "/#book-slot",
-    businessProblem:
-      "Support teams need consistent, multilingual answers grounded in approved knowledge bases while preserving conversation context and reducing repeated-query latency.",
-    pilotValidation:
-      "Validate bilingual FAQ retrieval, conversation memory, caching performance, and source-backed support answers.",
-    pilotScope:
-      "4-week helpdesk pilot validating bilingual FAQ resolution, session memory preservation, and high-frequency query caching.",
-    status: "Stable Microservice Core",
+    businessProblem: "Customer support teams handling English and Hindi queries lack an intelligent RAG system that maintains conversation context and avoids redundant LLM calls for repeated questions.",
+    pilotValidation: "40-60% cache hit rate in production testing. <50ms response on cache hits. 50 req/sec single instance. Prometheus metrics from day one.",
+    pilotScope: "4-week helpdesk pilot validating bilingual FAQ resolution, session memory preservation, and high-frequency query caching.",
+    status: "Production Hardened — Stable Microservice",
     maturity: "Production-ready",
-    techStack: ["FastAPI", "LangGraph", "ChromaDB", "Redis", "Groq", "Prometheus"],
+    techStack: ["FastAPI", "LangGraph", "ChromaDB", "Redis", "SQLite", "Groq (Llama 3.3-70B)", "sentence-transformers", "Prometheus", "Docker Compose", "Python 3.10+"],
     clientSafeHighlights: [
-      "Bilingual support memory",
-      "High-frequency caching filters",
-      "Prometheus health monitoring",
+      "Redis semantic cache",
+      "SQLite 5-turn session memory",
+      "Bilingual language routing",
+      "Prometheus /metrics telemetry"
     ],
     architecture: {
-      pattern: "Multilingual Support RAG Microservice",
-      description:
-        "Multilingual FAQ and support RAG microservice with intelligent session memory and caching.",
+      pattern: "LangGraph Conditional Support Routing & Memory Stack",
+      description: "FastAPI support service using LangGraph workflows to route English/Hindi queries via high-speed caches and local context database.",
       flow: [
-        "User support query",
-        "Language detection",
-        "Conversation memory",
-        "Knowledge-base retrieval",
-        "Confidence routing",
-        "LLM answer generation",
-        "Cache and monitoring",
-        "Support response",
+        "User support query parsed by language detection",
+        "Redis semantic cache checked for recent matches (<50ms)",
+        "ChromaDB performs vector retrieval on FAQ indices",
+        "Confidence Router checks scoring thresholds",
+        "Groq synthesizes final bilingual response if uncached",
+        "SQLite records conversation thread context",
+        "Prometheus logs performance metrics at /metrics"
       ],
       components: [
-        "Knowledge-base ingestion",
-        "Vector retrieval",
-        "Language detection",
-        "Conversation memory",
-        "Response caching",
-        "Confidence routing",
-        "Health monitoring",
+        "FastAPI gateway",
+        "LangGraph workflow pipeline",
+        "ChromaDB vector store",
+        "Redis cache instance",
+        "SQLite context database",
+        "Prometheus metric exporter"
       ],
       deploymentOptions: [
-        "Support-team pilot",
-        "Helpdesk assistant",
-        "Embedded FAQ microservice",
+        "Docker Compose container",
+        "Railway / Render cloud setup",
+        "AWS/GCP/Azure VM cluster"
       ],
       governanceControls: [
-        "Approved knowledge-base grounding",
-        "Fallback handling",
-        "Human escalation",
-        "Monitoring",
+        "Confidence gating thresholds",
+        "Safe language fallback routes",
+        "Data compliance session scoping",
+        "Production metric tracking"
       ],
       integrationPoints: [
-        "Helpdesk system",
-        "FAQ/SOP knowledge base",
-        "Chat widget",
-        "CRM or ticketing workflow",
-      ],
-    },
+        "Helpdesk customer portal",
+        "Redis instances",
+        "Groq inference REST APIs"
+      ]
+    }
   },
   {
     id: "flowsight",
-    name: "FlowSight AI",
-    tagline: "Shipment Delay Prediction & Explainability",
-    description:
-      "Ensemble ML classifier and telemetry feature store to predict and explain logistics exception risks.",
-    overview:
-      "FlowSight AI ingests logistics telemetry inputs to run risk probability, duration estimation, and root-cause classification models, mapping exactly why supply chains stall.",
+    name: "FLOWSIGHT AI — Predictive Supply-Chain Intelligence Pipeline",
+    tagline: "Shipment delay prediction with ensemble ML, vendor enrichment, and LLM explanations",
+    description: "Interpretable supply chain risk engine running gradient boosting ensemble classification and root-cause mapping.",
+    overview: "Three-model ensemble ML pipeline: (1) Binary classifier — will this shipment delay? (CatBoost + XGBoost + LightGBM, 84.7% accuracy, 0.891 AUC). (2) Regression — how many days late? (MAE 1.24 days). (3) Multi-class cause classifier (78.2% accuracy). DuckDB embedded feature store. Vendor reliability and route enrichment layers (50 vendors, 2,449 routes, +3.2% accuracy lift). Groq LLaMA plain-English explanations. Streamlit dashboard + Plotly charts.",
     features: [
-      "Custom feature stores to catalog routes, vendors, and shipping patterns",
-      "Advanced machine learning ensemble classification and regression predictors",
-      "Delay probability, duration estimation, and multi-class failure root-cause outputs",
-      "Natural-language anomaly explanations compiled dynamically",
+      "Three-model ensemble: binary classifier, regression estimator, and cause categorizer",
+      "High-speed DuckDB embedded feature store for rapid metadata retrieval",
+      "Vendor reliability and route enrichment layer covering 50 vendors & 2,449 routes",
+      "Interpretable plain-English predictions compiled via Groq LLaMA"
     ],
-    industries: ["Supply Chain", "Logistics", "FMCG"],
+    industries: ["Logistics", "Manufacturing", "Retail", "Supply Chain"],
     relatedCaseStudy: "flowsight",
     demoHref: "/#book-slot",
-    businessProblem:
-      "Supply-chain teams need earlier visibility into shipment delay risk, likely delay duration, and probable causes before disruptions affect operations.",
-    pilotValidation:
-      "Validate delay probability scoring, expected delay duration, delay-reason classification, vendor/route enrichment, and plain-language explanations.",
-    pilotScope:
-      "4-week logistics sandbox validating delay risk classification, duration estimates, and operations telemetry reporting.",
-    status: "Blueprint in Development / Prototype UI",
-    maturity: "In active development",
-    techStack: ["CatBoost", "XGBoost", "LightGBM", "DuckDB", "FastAPI", "Streamlit"],
+    businessProblem: "Supply chain teams have no early warning for shipment delays, leading to reactive firefighting rather than proactive risk management.",
+    pilotValidation: "85ms inference (without LLM), <2s with explanation. 84.7% binary accuracy. Tested on 15,000 shipment records with vendor/route enrichment.",
+    pilotScope: "4-week logistics sandbox validating delay risk classification, duration estimates, and operations telemetry reporting.",
+    status: "Functional Pipeline — Pilot Ready",
+    maturity: "Pilot-ready",
+    techStack: ["FastAPI", "CatBoost", "XGBoost", "LightGBM", "DuckDB", "Groq (LLaMA 3.3-70B)", "LangChain", "Streamlit", "Plotly", "Pydantic", "Python 3.10+"],
     clientSafeHighlights: [
-      "Ensemble ML classification",
-      "Telemetry feature store",
-      "Interactive delay dashboards",
+      "Gradient boosting ensemble ML",
+      "DuckDB local feature store",
+      "Vendor & route enrichment",
+      "Interpretable Plain-English reasons"
     ],
     architecture: {
-      pattern: "Predictive Supply-Chain Intelligence Pipeline",
-      description:
-        "Ensemble ML classifier and structured feature store to predict and explain logistics delay reasons.",
+      pattern: "3-Model Gradient Boosting Supply Chain Predictor",
+      description: "Highly interpretable ML pipeline running CatBoost, XGBoost, and LightGBM models enriched via DuckDB tables.",
       flow: [
-        "Shipment data ingestion",
-        "Feature store",
-        "Delay probability model",
-        "Delay duration estimator",
-        "Delay reason classifier",
-        "Vendor/route enrichment",
-        "Explanation layer",
-        "Operations dashboard",
+        "Logistics telemetry event ingested by FastAPI",
+        "DuckDB fetches vendor metrics and route profiles",
+        "Gradient boosting models score delay probability",
+        "Regression model estimates late days",
+        "Multi-class classifier identifies disruption reason",
+        "Groq LLaMA writes explanation for operations staff",
+        "Plotly renders real-time tracking graphs"
       ],
       components: [
-        "Shipment feature store",
-        "Delay-risk scoring",
-        "Duration estimation",
-        "Reason classification",
-        "Vendor/route enrichment",
-        "Explanation generation",
-        "Operations dashboard",
+        "CatBoost/XGBoost/LightGBM package",
+        "DuckDB feature store",
+        "Groq explanation engine",
+        "Streamlit user dashboard"
       ],
       deploymentOptions: [
-        "Logistics analytics sandbox",
-        "Supply-chain pilot",
-        "Operations risk dashboard",
+        "Local setup with Streamlit",
+        "FastAPI container deployment"
       ],
       governanceControls: [
-        "Decision-support only",
-        "Human operations review",
-        "Model monitoring",
-        "Data quality checks",
+        "Model drift and AUC tracking",
+        "Explainable feature rankings",
+        "Human coordinator overrides",
+        "Standard error range boundaries"
       ],
       integrationPoints: [
-        "Shipment data files",
-        "ERP/logistics system",
-        "Vendor performance records",
-        "Operations dashboard",
-      ],
-    },
+        "Logistics ERP tracking systems",
+        "DuckDB feature catalog",
+        "Groq & Streamlit clients"
+      ]
+    }
   },
   {
     id: "ai-readiness-studio",
-    name: "AI Readiness Intelligence Studio",
-    tagline: "AI Opportunity Discovery & Roadmap Generator",
-    description:
-      "Multi-agent stateful assistant to map technical feasibility, opportunity matrices, and custom roadmaps.",
-    overview:
-      "This studio deploys a stateful multi-agent orchestration. It audits workflows, risk profiles, and database perimeters, delivering professional reports.",
+    name: "AI READINESS INTELLIGENCE STUDIO — AI Opportunity Discovery Workspace",
+    tagline: "From business documents to AI opportunity roadmap in minutes — stateful multi-agent discovery with PDF/DOCX/PPTX export",
+    description: "Stateful 9-node multi-agent consulting workspace with professional document generators and GCP cloud storage.",
+    overview: "LangGraph-orchestrated 9-node multi-agent system: Discovery Agent → Bottleneck Analyst → Opportunity Mapper → Priority Grid → Readiness Scorer → Risk Register → Pilot Recommender → Roadmap Builder → Report Compiler. Dual DB engine: PostgreSQL + pgvector (production) with SQLite + in-memory fallback (dev). Rich exporters: PDF, DOCX (Word proposal), PPTX (slide deck). Human Review Mode for manual override before approval. GCP Terraform deployment (Compute Engine VM + GCS bucket for Ollama models).",
     features: [
-      "Stateful multi-agent network (architects, analysts, proposal compilers)",
-      "Comprehensive opportunity prioritization grids, readiness scores, and bottleneck audits",
-      "Structured risk register generation and 90-day technical pilots blueprints",
-      "Downloadable deliverable assets with full PDF, DOCX, and PPTX report compiling",
+      "9-node stateful LangGraph agent DAG mapping workflows & roadmaps",
+      "Dual-database configuration: PostgreSQL+pgvector or SQLite dev fallback",
+      "Exporters compiling custom PDF, DOCX proposals, and PPTX slide decks",
+      "Human Review Mode allowing consultants to override values before export"
     ],
-    industries: ["Enterprise", "Banking", "Healthcare", "Insurance"],
+    industries: ["Consulting", "Enterprise Transformation", "Sales Engineering"],
     relatedCaseStudy: "ai-readiness-studio",
     demoHref: "/#book-slot",
-    businessProblem:
-      "Consulting firms, transformation teams, and enterprise leaders need a faster way to convert business documents into prioritized AI opportunities, risk views, and implementation roadmaps.",
-    pilotValidation:
-      "Validate document-to-roadmap analysis, multi-agent opportunity discovery, human review, readiness scoring, and downloadable deliverables.",
-    pilotScope:
-      "4-week discovery pilot evaluating multi-document analysis, readiness scoring, and automated report compilers.",
-    status: "Stable Multi-Agent Architecture",
+    businessProblem: "Consulting firms and enterprise transformation leads spend weeks manually diagnosing client AI readiness and producing roadmap deliverables.",
+    pilotValidation: "Full discovery-to-deliverable in a single session. Human-in-loop approval before export. Instant PDF/Word/PowerPoint deliverables.",
+    pilotScope: "4-week discovery pilot evaluating multi-document analysis, readiness scoring, and automated report compilers.",
+    status: "Stable Multi-Agent Workspace — Pilot Ready",
     maturity: "Pilot-ready",
-    techStack: ["Next.js", "FastAPI", "LangGraph", "PostgreSQL", "pgvector", "Ollama"],
+    techStack: ["FastAPI", "LangGraph (9-node)", "Next.js 15", "PostgreSQL + pgvector", "SQLite (fallback)", "Groq (llama-3.3-70b)", "Ollama (qwen2.5:7b, llama3:8b, phi3.5)", "Alembic", "PDF/DOCX/PPTX exporters", "Recharts", "Terraform (GCP)", "Docker Compose"],
     clientSafeHighlights: [
-      "Stateful multi-agent analyzer",
-      "Comprehensive document ingestion",
-      "Automated deliverable exporters",
+      "9-Node stateful agent DAG",
+      "PDF/Word/PowerPoint exporters",
+      "Adaptive Ollama local fallback",
+      "GCP Terraform deployment"
     ],
     architecture: {
-      pattern: "AI Opportunity Discovery Workspace",
-      description:
-        "Multi-agent stateful assistant to map technical feasibility, opportunity matrices, and custom roadmaps.",
+      pattern: "9-Node Stateful LangGraph multi-agent & proposal generator",
+      description: "Enterprise consulting accelerator orchestrating 9 dedicated agents to analyze documents, score readiness, and generate multi-format slide/word outputs.",
       flow: [
-        "Business documents and process notes",
-        "Document understanding",
-        "Multi-agent opportunity analysis",
-        "Bottleneck detection",
-        "Readiness scoring",
-        "Risk register",
-        "Recommended pilot",
-        "Roadmap generation",
-        "Exportable deliverables",
+        "Business process documents uploaded to Next.js portal",
+        "9 specialized LangGraph nodes run structured audits",
+        "Opportunity matrices and readiness scores computed",
+        "Human Review Mode allows manual score override",
+        "Report compiler merges visual stats and texts",
+        "PDF, DOCX, and PPTX exporters build deliverables",
+        "Terraform provisions GCP compute/storage setups"
       ],
       components: [
-        "Document ingestion",
-        "Multi-agent analysis",
-        "Bottleneck detection",
-        "Opportunity prioritization",
-        "Readiness scoring",
-        "Risk register",
-        "Roadmap generator",
-        "Report exporters",
+        "9-Node LangGraph analyzer engine",
+        "Next.js dashboards with Recharts",
+        "Multi-format document exporter pipeline",
+        "Dual-engine database layer",
+        "GCP Terraform cloud configurations"
       ],
       deploymentOptions: [
-        "AI readiness audit",
-        "Consulting discovery sprint",
-        "Pre-sales transformation workshop",
+        "GCP Terraform VM + GCS setup",
+        "Docker Compose local container"
       ],
       governanceControls: [
-        "Human review",
-        "Editable recommendations",
-        "Transparent assumptions",
-        "Client-approved final reports",
+        "Human Review Mode override checkpoints",
+        "Strict fallback models for offline isolation",
+        "Alembic DB version controls",
+        "Audit trail logs"
       ],
       integrationPoints: [
-        "Business process documents",
-        "Stakeholder notes",
-        "Consulting workflows",
-        "PDF/DOCX/PPTX reporting",
-      ],
-    },
-  },
+        "PostgreSQL/pgvector database",
+        "Ollama & Groq APIs",
+        "Google Cloud Platform resources"
+      ]
+    }
+  }
 ];
 
 export function getProduct(id: string) {

@@ -26,6 +26,7 @@ export function LiveDemo({ showIntro = true }: LiveDemoProps) {
     setLoading(true);
     setOutput(null);
     await new Promise((r) => setTimeout(r, 800));
+    // TODO: Update VeriShield demo to integrate with actual API instead of returning mock output
     setOutput(
       `VeriShield analysis complete.\n\n• Grounding score: 0.94\n• Policy check: PASS\n• Citations: 3 sources attached\n• Confidence: High\n\n"${input.slice(0, 80)}${input.length > 80 ? "…" : ""}" — Response verified against retrieval corpus. No PII egress detected.`,
     );
