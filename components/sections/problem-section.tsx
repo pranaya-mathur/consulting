@@ -38,7 +38,7 @@ const problems = [
     icon: Cpu,
     title: "Manual operations drain high-value time",
     description:
-      "Highly skilled specialists spend hours triaging documents, matching rules, or copying data when agentic orchestration could solve L1 workflows reliably.",
+      "Highly skilled specialists spend hours triaging documents, matching rules, or copying data when coordinated AI agents could automate routine L1 workflows reliably.",
   },
 ];
 

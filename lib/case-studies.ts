@@ -25,14 +25,14 @@ export const caseStudies: CaseStudy[] = [
       { label: "Edge latency", value: "<120ms" },
     ],
     summary:
-      "Sovereign guard layer for enterprise LLM deployments with verifiable outputs and zero data egress.",
+      "Sovereign guard layer for enterprise LLM deployments with verifiable outputs and local data residency controls.",
     challenge:
-      "Designed for multi-branch regulated architectures requiring strict local data residency and verifiable claims.",
+      "Designed for multi-branch regulated architectures requiring strict data residency and citation-backed claims.",
     solution:
       "VeriShield enforces retrieval-grounded responses, policy graphs, and cryptographic audit trails at the edge.",
     outcomes: [
       "Validated in a simulated banking environment mimicking 40+ branches",
-      "Full DPDP-compliant audit trails for every agent interaction",
+      "DPDP-aligned local audit trails for every agent interaction",
       "Designed to meet regulatory audit timelines within a 6-week evaluation cycle",
     ],
     demoHref: "/live-demo",
@@ -57,7 +57,7 @@ export const caseStudies: CaseStudy[] = [
     outcomes: [
       "Intake time reduced by 55% in patient user test sprints",
       "8-language support verified with local translation files",
-      "Zero patient health information (PHI) stored outside edge perimeter",
+      "Patient health information (PHI) stored locally within approved edge boundaries.",
     ],
     demoHref: "/products/mediflow",
   },
@@ -94,7 +94,7 @@ export const caseStudies: CaseStudy[] = [
     metrics: [
       { label: "Exception speed", value: "-48%" },
       { label: "Inventory match rate", value: "97.8%" },
-      { label: "Supplier visibility", value: "100%" },
+      { label: "Supplier data nodes", value: "800+" },
     ],
     summary:
       "Real-time supply chain orchestration with agentic exception handling and predictive alerts.",
@@ -129,7 +129,7 @@ export const caseStudies: CaseStudy[] = [
     outcomes: [
       "84.2% queries successfully resolved in pilot validation set without escalation",
       "Every answer linked directly to official source document citations",
-      "DPDP-compliant citizens' consent flows implemented in prototype",
+      "DPDP-aligned citizens' consent flows implemented in prototype",
     ],
     demoHref: "/products/govgig",
   },

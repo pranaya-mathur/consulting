@@ -36,22 +36,22 @@ export const services = [
   {
     title: "RAG & Knowledge Intelligence",
     description:
-      "Document-grounded assistants for policies, SOPs, support knowledge, healthcare, insurance, legal, and internal enterprise knowledge.",
+      "Document-grounded systems to query policies, SOPs, support logs, and internal documentation across healthcare, legal, and operational workflows.",
   },
   {
     title: "AI Agents & Workflow Automation",
     description:
-      "Agentic workflows for repetitive operations, document review, approvals, onboarding, claims, reporting, and internal task automation.",
+      "Coordinated AI agent networks to automate repetitive tasks like document reviews, multi-step approvals, onboarding triage, and operational reporting.",
   },
   {
     title: "AI Governance & VeriShield Layer",
     description:
-      "Guardrails, audit logs, policy checks, source grounding, escalation flows, and hallucination-risk controls for business-critical AI systems.",
+      "Custom verification layers, structured policy graphs, local audit logs, and hallucination guardrails to ensure business-critical LLM outputs remain grounded.",
   },
   {
     title: "AI Adoption & Training",
     description:
-      "Role-based AI training, adoption roadmaps, team enablement, and practical workshops for safe and productive AI usage.",
+      "Role-based hands-on upskilling, structured AI roadmap design, and practical developer enablement workshops for safe internal adoption.",
   },
 ] as const;
 
@@ -80,7 +80,7 @@ export const faqs = [
   {
     question: "How is VeriEdge AI different from generic enterprise consultancies?",
     answer:
-      "We are a practitioner-led AI studio, not an agency of slide-makers. We build actual working prototypes and customizable accelerators, allowing you to validate value through a 4–6 week pilot before making large software investments.",
+      "We are a practitioner-led AI studio focused on concrete engineering rather than high-level slides. We build actual working prototypes and customizable accelerators, allowing you to validate real-world value through a 4–6 week pilot before committing to major software investments.",
   },
   {
     question: "Do you deploy on our infrastructure?",
@@ -100,7 +100,7 @@ export const faqs = [
   {
     question: "Do we own the intellectual property?",
     answer:
-      "Absolutely. Unlike enterprise software companies that lock you into proprietary platforms, we build on your infrastructure. The custom wrappers, agent pipelines, and system configurations are fully owned by your company.",
+      "Absolutely. We build directly on your cloud or on-premise infrastructure. All custom wrappers, agent orchestration pipelines, database configurations, and integration adapters are fully owned by your company from day one. You retain complete intellectual property rights with zero vendor lock-in.",
   },
   {
     question: "How can we get started?",
